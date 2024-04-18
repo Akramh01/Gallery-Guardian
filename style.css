@@ -45,7 +45,7 @@
 
   }
 
-  ul li a{
+  ul li:hover a{
     color: #fff;
     background-color: rgb(104, 195, 164);
   }
@@ -78,7 +78,7 @@
     position: absolute;
     height: 2px;
     width: 20px;
-    background-color: #8000ff ;
+    background-color: #0b1a1d ;
     border-radius: 50px;
     transition: 0.3s ease;
 
