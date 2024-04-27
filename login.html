@@ -28,14 +28,27 @@
           </ul>
         </div>
     </label>
-    <form methode = "post" action = "./scriptPhpLogin/login.php">
+    <form method = "POST" action = "./scriptPhpLogin/login.php">
         <label for = "identifiant">Identifiant:</label>
         <input type = "text" id = "identifiant" name = "id"><br><br>
         <label for = "password">Mot de passe:</label>
-        <input type text id = "password" name = "password"><br><br>
+        <input type = "password" id = "password" name = "password"><br><br>
         <input type = "submit" value = "Connexion" name = "login">
-        <h1>Mot de passe oublié</h1>
-        <h1>Première connexion</h1>
+        <a href = "forgotPassword.html"><i>Mot de pass oublié ?</i></a>
+        <a href = "firstlogin.html"><i>Première connexion !</i></a>
     </form>
+    <script>
+      window.onload = function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const error = urlParams.get('error');
+          if (error) {
+              const errorDiv = document.getElementById('error');
+              errorDiv.textContent = error;
+              errorDiv.style.color = 'red';
+          }
+      }
+      </script>
+      
+      <div id="error"></div>
 </body>
 </html>
