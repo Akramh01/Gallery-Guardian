@@ -2,18 +2,19 @@
 
 include 'bd.php';
 
-function generateRandomString($length, $bdd) {
+function generateRandomString($length, $bdd)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
+    $characters_length = strlen($characters);
+    $random_string = '';
     do {
         for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
+            $random_string .= $characters[rand(0, $characters_length - 1)];
         }
         $requete = $bdd->prepare("SELECT id FROM personnel where id = :id");
-        $requete->execute([':id' => $randomString]);
+        $requete->execute([':id' => $random_string]);
     }while (empty($requete->fetch()));
-    return $randomString;
+    return $random_string;
 }
 
 $id = generateRandomString(6, $bdd);
@@ -31,7 +32,8 @@ if(isset($_POST['create'])) { //check if form was submitted
             "date" => $date
         )
         );
-        if(empty($verif->fetch())) {
+        if(empty($verif->fetch()))
+        {
             $requete = $bdd->prepare("INSERT INTO personnel(idP, NomP, PrenomP, DateN, MotDePasse)
              VALUES (:id, :nom, :prenom, :date, MD5(:password)");
             $requete->execute(
@@ -45,15 +47,17 @@ if(isset($_POST['create'])) { //check if form was submitted
             );
             $reponse = $requete->fetchAll(PDO::FETCH_ASSOC);
         }
-        else {
+        else
+        {
             ?>
             <h1>Vous êtes deja inscrit</h1>
             <?php
-            header('Location: login.html');
+            header('Location: ../login.html');
             exit();
         }
 }
-else {
+else
+{
     echo "No form was submitted";
 }
 

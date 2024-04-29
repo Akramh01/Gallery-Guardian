@@ -1,14 +1,14 @@
 <?php
 
-include 'scriptPhpLogin/bd.php';
-
+include '../php_script_login/bd.php';
+echo "test";
 if(isset($_GET['token']) && $_GET['token']!='')
 {
     $stmt = $bdd->prepare('SELECT email FROM personnel WHERE token = ?');
     $stmt->execute([$_GET['token']]);
     $email = $stmt->fetchColumn();
 
-    if($email){
+    if($email) {
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -18,13 +18,12 @@ if(isset($_GET['token']) && $_GET['token']!='')
             <title>Récuperation du mot de passe</title>
         </head>
         <body>
-            <form methode = 'POST'>
+            <form method = 'POST'>
                 <label for = "newPassword">Nouveau mot de passe</label>
                 <input type = "password" name = "newPassword">
                 <label for = "ConfirmPassword">Confirmer le nouveau mot de passe</label>
                 <input type = "password" name = "newPassword2">
                 <input type = "submit" value = "Confirmer">
-                
             </form>
         </body>
         </html>
@@ -32,4 +31,15 @@ if(isset($_GET['token']) && $_GET['token']!='')
     }
 }
 
+if(isset($_POST['newPassword']) && isset($_POST['newPassword2'])) {
+
+    if($_POST['newPassword'] != $_POST['newPassword2']) {
+        echo "Les mots de passe ne sont pas identiques";
+    } else {
+        $requet = $bdd->prepare('UPDATE personnel SET motDePasse = ?, token = NULL WHERE email = ?');
+        $requet->execute([md5($_POST['newPassword']), $email]);
+        echo "Mot de passe modifié avec succès";
+    }
+}
 ?>
+

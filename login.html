@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Gallery Guardian</title>
-    <link rel="stylesheet" type="text/css" href="style-login/menu.css">
-    <link rel="stylesheet" type="text/css" href="style-login/login.css">
+    <link rel="stylesheet" type="text/css" href="style_login/menu.css">
+    <link rel="stylesheet" type="text/css" href="style_login/login.css">
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -28,14 +28,14 @@
           </ul>
         </div>
     </label>
-    <form method = "POST" action = "./scriptPhpLogin/login.php">
+    <form method = "POST" action = "php_script_login/login.php">
         <label for = "identifiant">Identifiant:</label>
         <input type = "text" id = "identifiant" name = "id"><br><br>
         <label for = "password">Mot de passe:</label>
         <input type = "password" id = "password" name = "password"><br><br>
         <input type = "submit" value = "Connexion" name = "login">
-        <a href = "forgotPassword.html"><i>Mot de pass oublié ?</i></a>
-        <a href = "firstlogin.html"><i>Première connexion !</i></a>
+        <a href = "forgot_password.html"><i>Mot de pass oublié ?</i></a>
+        <a href = "first_login.html"><i>Première connexion !</i></a>
     </form>
     <script>
       window.onload = function() {
