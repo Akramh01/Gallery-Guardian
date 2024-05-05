@@ -4,16 +4,16 @@ include 'bd.php';
 if(isset($_POST['email'])) {
     $token = uniqid();
     
-    $url = "http://localhost/Gallery-Guardian/token/index.php?token=$token";
+    $url = "http://localhost/Gallery-Guardian/login/token/index.php?token=$token";
    
     // Afficher l'URL pour vérifier qu'elle est correcte
     echo "URL générée : " . $url . "<br>";
 
-    $message = "Bonjour, voici votre lien pour la réintialisation de votre mot de passe : $url";
+    $message = "Bonjour, voici votre lien pour la réinitialisation de votre mot de passe : $url";
     $header = 'Content-type: text/html; charset="utf-8"'." ";
 
     #envoie du mail
-    if(mail($_POST['email'], "Reinitialisation du mot de passe", $message, $header))
+    if(mail($_POST['email'], "Réinitialisation du mot de passe", $message, $header))
     {
         $sql = "UPDATE personnel SET token = :token WHERE email = :email";
         $requet = $bdd->prepare($sql);

@@ -5,7 +5,6 @@
         <title>Gallery Guardian</title>
         <link rel="stylesheet" type="text/css" href="style_login/menu.css">
         <link rel="stylesheet" type="text/css" href="style_login/first_login.css">
-        <script src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
@@ -29,18 +28,24 @@
             </div>
         </label>
 
-        <form method = "POST" action = "php_script_login/inscription.php">
+        <form method = "POST" action = "./php_script_login/inscription.php" id ="myForm">
+            <label for = "identifiant" >Identifiant* :</label><br>
+            <input type = "text" id = "identifiant" name = "id" placeholder="Entrez votre identifiant" ><br><br>
             <label for = "nom">Nom* :</label><br>
-            <input type = "text" id = "nom" name = "nom" placeholder="Entrez votre nom" required><br><br>
+            <input type = "text" id = "nom" name = "nom" placeholder="Entrez votre nom" ><br><br>
             <label for = "prenom">Prenom* :</label><br>
-            <input type = "text" id = "prenom" name = "prenom" placeholder="Entrez votre prenom" required><br><br>
+            <input type = "text" id = "prenom" name = "prenom" placeholder="Entrez votre prenom" ><br><br>
             <label for = "date" >Date de naissance* :</label><br>
-            <input type = "date" id = "date" name = "date" required><br><br>
+            <input type = "date" id = "date" name = "date" ><br><br>
+            <label for = "email">Email*</label>
+            <input type = "email" id = "email" name = "email" ><br><br>
             <label for = "password">Mot de passe* :</label><br>
-            <input type = "password" id = "password" name = "password" required><br><br>
+            <input type = "password" id = "password" name = "password" ><br><br>
             <label for = "password">Confirmer mot de passe* :</label><br>
-            <input type = "password" id = "password" name = "password2" required><br><br>
-            <input type = "submit" value = "Créer mon compte" name = "create">
+            <input type = "password" id = "password2" name = "password2" ><br><br>
+            <button type = "submit" name = "create">Créer mon compte</button>
         </form>
+        <script src="index.js"></script>
+        
     </body>
 </html>

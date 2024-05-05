@@ -28,14 +28,14 @@
           </ul>
         </div>
     </label>
-    <form method = "POST" action = "php_script_login/login.php">
+    <form method = "POST" action = "php_script_login/login.php" id = "myForm">
         <label for = "identifiant">Identifiant:</label>
         <input type = "text" id = "identifiant" name = "id"><br><br>
         <label for = "password">Mot de passe:</label>
         <input type = "password" id = "password" name = "password"><br><br>
-        <input type = "submit" value = "Connexion" name = "login">
+        <button type = "submit" name = "login">Se connecter</button>
         <a href = "forgot_password.html"><i>Mot de pass oublié ?</i></a>
-        <a href = "first_login.html"><i>Première connexion !</i></a>
+        <a href = "first_login.html"><i>Créer un compte</i></a>
     </form>
     <script>
       window.onload = function() {
@@ -47,6 +47,33 @@
               errorDiv.style.color = 'red';
           }
       }
+
+      let myForm = document.getElementById('myForm');
+
+        myForm.addEventListener('submit', function(e) {
+            let id = document.getElementById('identifiant');
+            let password = document.getElementById('password');
+
+            if(id.value.trim() == '') {
+                id.placeholder = 'Veuillez entrer votre identifiant';
+                id.style.borderColor = 'red';
+                id.style.color = 'red';
+                e.preventDefault();
+                let label = document.querySelector(`label[for="${id.id}"]`);
+                if (label) {
+                    label.style.color = 'red';
+                }
+            e.preventDefault();
+            }else if(password.value.trim() == '') {
+                password.placeholder = 'Veuillez entrer votre mot de passe';
+                password.style.borderColor = 'red';
+                e.preventDefault();
+                let label = document.querySelector(`label[for="${password.id}"]`);
+                if (label) {
+                    label.style.color = 'red';
+                }
+            }
+        })
       </script>
       
       <div id="error"></div>

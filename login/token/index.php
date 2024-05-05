@@ -1,8 +1,8 @@
 <?php
 
 include '../php_script_login/bd.php';
-echo "test";
-if(isset($_GET['token']) && $_GET['token']!='')
+
+if(isset($_GET['token']) && $_GET['token'] != '')
 {
     $stmt = $bdd->prepare('SELECT email FROM personnel WHERE token = ?');
     $stmt->execute([$_GET['token']]);
