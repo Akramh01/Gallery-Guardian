@@ -1,0 +1,122 @@
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing :border-box;
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size : 2.4rem;
+}
+
+h2 {
+    font-size : 4.8rem;
+    color: #558eac;
+}
+
+h3 {
+    font-size : 3rem;
+}
+
+h4,h5 {
+    font-size : 2.8rem;
+}
+
+li {
+    font-size : 2rem;
+}
+
+a{
+    color :aliceblue;
+    text-decoration: none;
+}
+
+.main-head {
+    background: #558eac ;
+    color :rgb(83, 85, 87);
+}
+
+nav {
+
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+}
+
+nav ul{
+
+    display: flex;
+    flex :1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+}
+
+#Logo {
+    flex : 2 1 4rem;
+}
+
+.meow  {
+    min-height: 90vh;
+    background-image: linear-gradient(rgb(40, 40, 44), transparent), url('./Gallery-Guardian/imagemusé.jpg');
+    background-size: cover;
+    background-position: bottom;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.meow h3 {
+    padding: 4rem;
+}
+
+
+.contact-footer {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-info,
+.social-media {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.contact-info h3,
+.social-media h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info ul,
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li,
+.social-media ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.social-media ul li a:hover {
+    color: #558eac;
+}
+
