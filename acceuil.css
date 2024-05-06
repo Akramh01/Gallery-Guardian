@@ -65,7 +65,7 @@ nav ul{
 
 .meow  {
     min-height: 90vh;
-    background-image: linear-gradient(rgb(40, 40, 44), transparent), url('./Gallery-Guardian/imagemusé.jpg');
+    background-image: linear-gradient(rgb(40, 40, 44), transparent), url('./imagemusé.jpg');
     background-size: cover;
     background-position: bottom;
     color: #ffffff;
