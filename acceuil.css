@@ -7,6 +7,15 @@
 html {
     font-size: 62.5%;
 }
+head title{
+    font-size: 62.5%;
+    color: #979797;
+}
+
+body{
+    font-size: 62.5%;
+    background-image: url('./image.jpg');
+}
 
 h1 {
     font-size : 2.4rem;
@@ -14,18 +23,15 @@ h1 {
 
 h2 {
     font-size : 4.8rem;
-    color: #558eac;
+    color: #dfdddd;
 }
 
 h3 {
-    font-size : 3rem;
+    font-size : 2rem;
+    color:beige;
 }
 
-h4,h5 {
-    font-size : 2.8rem;
-}
-
-li {
+.main-head li {
     font-size : 2rem;
 }
 
@@ -36,7 +42,7 @@ a{
 
 .main-head {
     background: #558eac ;
-    color :rgb(83, 85, 87);
+    color :rgb(255, 255, 255);
 }
 
 nav {
@@ -62,25 +68,60 @@ nav ul{
 #Logo {
     flex : 2 1 4rem;
 }
-
-.meow  {
+ 
+.text {
     min-height: 90vh;
-    background-image: linear-gradient(rgb(40, 40, 44), transparent), url('./imagemusé.jpg');
+    background-image: url('./image.jpg');
     background-size: cover;
     background-position: bottom;
-    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.meow h3 {
+.text h3 {
     padding: 4rem;
 }
 
+.section1, .section2 {
+    
+    width: 100%;
+    min-height: 100vh ;
+    position: relative;
+    background-image:url('./image.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.section2{
+    
+    width: 100%;
+    min-height: 100vh ;
+    position: relative;
+    background-image: url('./image.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
 
+.text2 ul {
+    display: flex;
+    justify-content: center; /* Pour aligner au centre horizontalement */
+    list-style: none;
+    padding: 4rem; /* Supprimer le padding par défaut */
+}
+
+.text2 ul li {
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 10px; /* Ajouter un peu de marge entre les éléments */
+    padding: 20rem;
+    font-size: 3rem;
+}
+
+
+
+
+/*footer*/
 .contact-footer {
-    background-color: #f4f4f4;
+    color:beige;
     padding: 2rem;
     display: flex;
     justify-content: space-around;
@@ -112,11 +153,11 @@ nav ul{
 
 .social-media ul li a {
     text-decoration: none;
-    color: #333;
+    color: #ffff;
     font-size: 1.5rem;
 }
 
 .social-media ul li a:hover {
-    color: #558eac;
+    color: #81d0fb;
 }
 

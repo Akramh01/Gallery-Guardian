@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="acceuil.css">
+
+    <title>GalleryGardian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        h2 {
+            font-size: 4.8rem;
+            color: #979797;
+        }
+
+        h3 {
+            font-size: 3rem;
+        }
+
+        .main-head li {
+            font-size: 2rem;
+        }
+
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        .main-head {
+            background: #558eac;
+            color: rgb(255, 255, 255);
+        }
+
+        nav {
+            min-height: 10vh;
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            flex: 1 1 40rem;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+        }
+
+        #Logo {
+            flex: 2 1 4rem;
+        }
+
+        .text h3 {
+            padding: 4rem;
+        }
+
+        .section-container {
+            display: flex; /* Affiche les sections en ligne */
+            width: 300%; /* Largeur totale des slides */
+        }
+
+        .section {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background-image: linear-gradient(rgb(40, 40, 44), transparent), url('./image.jpg');
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Franklin Gothic Heavy';
+            font-size: 5vh; /* Taille de la police ajustée */
+            color: beige;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 70px rgba(225, 225, 225, 0.3);
+        }
+
+        .footer {
+            background-color: rgba(44, 63, 71, 0.555);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .contact-info,
+        .social-media {
+            flex: 1;
+            margin-right: 2rem;
+        }
+
+        .contact-info h3,
+        .social-media h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info ul,
+        .social-media ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info ul li,
+        .social-media ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .social-media ul li a {
+            text-decoration: none;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+
+        .social-media ul li a:hover {
+            color: #81d0fb;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-head">
+        <nav>
+            <h1 id="Logo">GalleryGardian</h1>
+            <ul>
+                <li><a href='#'>Profile</a></li>
+                <li><a href='#'>Télécomande</a></li>
+                <li><a href='#'>Oeuvre d'art</a></li>
+                <li><a href='#'>Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-container">
+        <div class="section">
+            <div class="text">
+                <h3>Together to protect what's ours</h3>
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <ul>
+                    <li><a href='#'>Oeuvre</a></li>
+                    <li><a href='#'>Remote</a></li>
+                    <li><a href='#'>Alert!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <h3>Contactez-nous</h3>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email: contact@example.com</li>
+                <li><i class="fas fa-phone"></i> Téléphone: +123456789</li>
+                <li><i class="fas fa-map-marker-alt"></i> Adresse: 123 Rue de l'Exemple, Toulouse, France</li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h3>Suivez-nous</h3>
+            <p>Retrouvez-nous sur les réseaux sociaux :</p>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i>Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i>Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
