@@ -1,7 +1,14 @@
+.titre{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #d02121;
+    
 
+}
 .center-table {
     margin: 0 auto;
-    margin-top: 10%;
+   
     width: 50%;  
     border-collapse: collapse;
 }
@@ -11,7 +18,7 @@
     background-color: #ffffff;
 }
 .center-table th {
-    background-color: #bedefc;
+    background-color:rgb(108, 135, 182);
     text-align: left;
 }
 
@@ -22,6 +29,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 .navbar {
