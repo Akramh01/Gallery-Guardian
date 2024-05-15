@@ -157,7 +157,7 @@
                     <tr>
                         <?php
                         include 'bd.php';
-                        $sql = "SELECT * FROM Oeuvreart LIMIT 1";
+                        $sql = "SELECT * FROM Evenement LIMIT 1";
                         $result = $bdd->query($sql);
                         if ($result->rowCount() > 0) {
                             // Fetch the column names
@@ -171,7 +171,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM Oeuvreart";
+                    $sql = "SELECT * FROM Evenement";
                     $result = $bdd->query($sql);
 
                     if ($result->rowCount() > 0) {
