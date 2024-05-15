@@ -1,16 +1,4 @@
 
-include 
-
-// Requête SQL pour sélectionner l'id d'oeuvre et numéro de salle 
-$requete = "SELECT O.idOeuvre as idOeuvre, P.NumSalle as NumSalle 
-            FROM Oeuvreart O, Porte P
-            WHERE O.idMusee = P.idMusee";
-$resultat = mysqli_query($connexion, $requete);
-
-?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +8,7 @@ $resultat = mysqli_query($connexion, $requete);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notre site internet</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
-  <link rel = "stylesheet" type = "text/css" href = "oeuvre.css">
+  <link rel="stylesheet" type="text/css" href="oeuvre.css">
 </head>
 
 <body>
@@ -43,52 +30,55 @@ $resultat = mysqli_query($connexion, $requete);
       </ul>
     </div>
   </label>
+
   
-  
- 
+
   <div class="container">
     <div class="table-container">
-      <h4> Des informations</h4>
+      <h4>Des informations</h4>
       <table border="1">
         <thead>
           <tr>
             <th>idOeuvre</th>
             <th>Num Salle</th>
-
           </tr>
         </thead>
         <tbody>
-
           <?php
-        if($resultat){
-        if (mysqli_num_rows($resultat) == 0) {
-            echo "<p>Aucune ligne ne correspond</p>";
-        } else {
-            
-            
-            while ($ligneResultat = mysqli_fetch_assoc($resultat)) {
+         
+
+        
+          $requete = "SELECT idOeuvre, NumSalle FROM  Oeuvreart"; // Modifiez le nom de la table et des colonnes selon votre base de données
+          $resultat = mysqli_query($bdd, $requete);
+
+          if ($resultat) {
+            if (mysqli_num_rows($resultat) == 0) {
+              echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
+            } else {
+              while ($ligneResultat = mysqli_fetch_assoc($resultat)) {
                 echo "<tr>";
-                echo "<td>".$ligneResultat["idOeuvre"]."</td>";
-                echo "<td>".$ligneResultat["NumSalle"]."</td>";
+                echo "<td>" . htmlspecialchars($ligneResultat["idOeuvre"]) . "</td>";
+                echo "<td>" . htmlspecialchars($ligneResultat["NumSalle"]) . "</td>";
                 echo "</tr>";
+              }
             }
-          
-        }
-        }
-        else{
-         echo " Erreur dans l'excution  de la requette";
-         echo mysqli_error ($connexion);
-        }
-        ?>
+          } else {
+            echo "<tr><td colspan='2'>Erreur dans l'exécution de la requête : " . mysqli_error($connexion) . "</td></tr>";
+          }
+
+          // Fermeture de la connexion
+          mysqli_close($bdd);
+          ?>
         </tbody>
       </table>
     </div>
   </div>
-  <div class="image-container">
-    <h2>Plan de musée </h2>
-    <img src="R.jpeg" alt="Plan du musée">
 
+  <div class="image-container">
+    <h2>Plan de musée</h2>
+    <img src="R.jpeg" alt="Plan du musée">
   </div>
+
   <footer>
     <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
   </footer>
