@@ -9,7 +9,7 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color:rgb(196, 254, 255);
+    background-color:rgb(32, 11, 128);
   }
   
   .slide{
@@ -47,7 +47,7 @@
 
   ul li:hover a{
     color: #fff;
-    background-color: rgb(104, 195, 164);
+    background-color: rgb(26, 17, 125);
   }
 
   ul li a i {
@@ -125,4 +125,11 @@ input:checked ~ .slide{
   transform: translateX(0);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
   
