@@ -1,23 +1,5 @@
 
-<?php
 
-$servername = "localhost"; //192.168.4.1 pour le raspberry
-$username = "root"; //username dans le raspberry sera different
-$pass = ""; //password dans le raspberry sera different
-
-//Connexion à la base de donnée
-try{
-            
-    $bdd = new PDO("mysql:host=$servername;dbname=15maigallery", $username, $pass);
-    
-    //connexion a la base de donnees, dbname pour le nom de la base de donnée que je n'ai pas encore mit
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //spécifier le type d'erreur
-    echo "Connected successfully";
-}catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -242,14 +224,16 @@ input:checked ~ .slide{
 </html>
 
 <?php
+include 'bd.php';
+
 // Requête SQL pour sélectionner des données depuis une table
 $sql = "SELECT NomO FROM Oeuvreart";
-$result = $bdd->query($connexion, $requette);
+$result = $bdd->query($sql);
 
 // Vérification s'il y a des résultats
-if ($result->num_rows > 0) {
+if ($result->rowCount() > 0) {
     // Boucle à travers chaque ligne de résultat
-    while($row = $result->fetch_assoc()) {
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo "Le nom de l'oeuvre: " . $row["NomO"] ;
     }
 } else {
@@ -257,6 +241,7 @@ if ($result->num_rows > 0) {
 }
 
 // Fermeture de la connexion à la base de données
-$bdd->close();
+$bdd = null;
 ?>
+
 
