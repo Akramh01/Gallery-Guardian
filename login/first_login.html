@@ -28,23 +28,35 @@
             </div>
         </label>
 
-        <form method = "POST" action = "./php_script_login/inscription.php" id ="myForm">
-            <label for = "identifiant" >Identifiant* :</label><br>
-            <input type = "text" id = "identifiant" name = "id" placeholder="Entrez votre identifiant" ><br><br>
-            <label for = "nom">Nom* :</label><br>
-            <input type = "text" id = "nom" name = "nom" placeholder="Entrez votre nom" ><br><br>
-            <label for = "prenom">Prenom* :</label><br>
-            <input type = "text" id = "prenom" name = "prenom" placeholder="Entrez votre prenom" ><br><br>
-            <label for = "date" >Date de naissance* :</label><br>
-            <input type = "date" id = "date" name = "date" ><br><br>
-            <label for = "email">Email*</label>
-            <input type = "email" id = "email" name = "email" ><br><br>
-            <label for = "password">Mot de passe* :</label><br>
-            <input type = "password" id = "password" name = "password" ><br><br>
-            <label for = "password">Confirmer mot de passe* :</label><br>
-            <input type = "password" id = "password2" name = "password2" ><br><br>
-            <button type = "submit" name = "create">Créer mon compte</button>
-        </form>
+        <form method="POST" action="./php_script_login/inscription.php" id="myForm">
+          <div class="column">
+              <label for="identifiant">Identifiant* :</label>
+              <input type="text" id="identifiant" name="id" placeholder="Entrez votre identifiant">
+              
+              <label for="nom">Nom* :</label>
+              <input type="text" id="nom" name="nom" placeholder="Entrez votre nom">
+              
+              <label for="prenom">Prenom* :</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prenom">
+
+              <label for="date">Date de naissance* :</label>
+              <input type="date" id="date" name="date">
+          </div>
+          <div class="column">
+              
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email">
+              
+              <label for="password">Mot de passe* :</label>
+              <input type="password" id="password" name="password">
+              
+              <label for="password2">Confirmer mot de passe* :</label>
+              <input type="password" id="password2" name="password2">
+              <button type="submit" name="create" style="grid-column: 1 / -1;">Créer mon compte</button>
+              <div id="error"></div>
+          </div>
+      </form>
+        
         <script src="index.js"></script>
         
     </body>

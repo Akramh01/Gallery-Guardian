@@ -76,3 +76,14 @@ myForm.addEventListener('submit', function(e) {
         }
     }
 })
+
+
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+        const errorDiv = document.getElementById('error');
+        errorDiv.textContent = error;
+        errorDiv.style.color = 'red';
+    }
+}

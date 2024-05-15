@@ -9,34 +9,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <label class = "navbar">
-        <input type="checkbox" class = "toggler">
+    <label class="navbar">
+        <input type="checkbox" class="toggler">
         <div class="toggle">
-          <span class="top_line common"></span>
-          <span class="middle_line common"></span>
-          <span class="bottom_line common"></span>
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
         </div>
-  
-        <div class = "slide">
-          <h1>MENU</h1>
-          <ul>
-            <li><a href = '#'><i class = "fas fa-user"></i> Profile </a></li>
-            <li><a href = '#'><i class = "far fa-address-book"></i> Télécommande </a></li>
-            <li><a href = '#'><i class = "fas fa-tv"></i> Oeuvre d'art </a></li>
-            <li><a href = '#'><i class = "fas fa-comments"></i> Events </a></li>
-  
-          </ul>
+        <div class="slide">
+            <h1>MENU</h1>
+            <ul>
+                <li><a href='#'><i class="fas fa-user"></i> Profile </a></li>
+                <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
+                <li><a href='#'><i class="fas fa-tv"></i> Oeuvre D'art </a></li>
+                <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
+            </ul>
         </div>
     </label>
-    <form method = "POST" action = "php_script_login/login.php" id = "myForm">
-        <label for = "identifiant">Identifiant:</label>
-        <input type = "text" id = "identifiant" name = "id"><br><br>
-        <label for = "password">Mot de passe:</label>
-        <input type = "password" id = "password" name = "password"><br><br>
-        <button type = "submit" name = "login">Se connecter</button>
-        <a href = "forgot_password.html"><i>Mot de pass oublié ?</i></a>
-        <a href = "first_login.html"><i>Créer un compte</i></a>
-    </form>
+    <div class="container">
+        <form method="POST" action="php_script_login/login.php" id="myForm">
+            <label for="identifiant">Identifiant:</label>
+            <input type="text" id="identifiant" name="id"><br><br>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit" name="login">Se connecter</button>
+            <div id="error"></div>
+            <a href="forgot_password.html"><i>Mot de pass oublié ?</i></a>
+            <a href="first_login.html"><i>Créer un compte</i></a>
+        </form>
+        
+    </div>
     <script>
       window.onload = function() {
           const urlParams = new URLSearchParams(window.location.search);
@@ -74,8 +76,6 @@
                 }
             }
         })
-      </script>
-      
-      <div id="error"></div>
+    </script>
 </body>
 </html>
