@@ -250,7 +250,7 @@ $result = $conn->query($connexion, $requette);
 if ($result->num_rows > 0) {
     // Boucle à travers chaque ligne de résultat
     while($row = $result->fetch_assoc()) {
-        echo "Le nom de l'oeuvre: " . $row["NomO"] "<br>";
+        echo "Le nom de l'oeuvre: " . $row["NomO"] ;
     }
 } else {
     echo "Aucun résultat trouvé";
