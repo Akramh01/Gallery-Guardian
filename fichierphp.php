@@ -11,7 +11,7 @@
         .center-table {
             margin: 0 auto;
             margin-top: 10%;
-            width: 50%;
+            width: 50%;  
             border-collapse: collapse;
         }
         .center-table th, .center-table td {
