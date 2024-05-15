@@ -161,15 +161,11 @@
                 </thead>
                 <tbody>
                 <?php
-// bd.php should include the connection setup, for example:
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=your_dbname;charset=utf8', 'your_username', 'your_password');
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+
 
 // Requête SQL pour sélectionner des données depuis la table Evenement
+include 'bd.php';
+
 $sql = "SELECT * FROM Evenement";
 try {
     $result = $bdd->query($sql);
