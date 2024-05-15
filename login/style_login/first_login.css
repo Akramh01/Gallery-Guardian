@@ -35,6 +35,7 @@ form {
   width: 48%; /* Maintenir cette largeur pour deux colonnes */
 }
 
+
 form input[type="text"],
 form input[type="date"],
 form input[type="email"],
@@ -66,4 +67,13 @@ form label {
   color: #ecf0f1;
   font-weight: 500;
   margin-bottom: 5px; /* Ajuster pour un meilleur espacement vertical des labels */
+}
+
+form button:hover {
+  background-color: #16a085;
+}
+
+form input:focus {
+  border-color: #1abc9c;
+  outline: none;
 }

@@ -17,7 +17,9 @@ if (isset($_POST['create'])) { // Vérifie si le formulaire a été soumis
     else if (!$verif->fetch()){ // Correction ici : vérifie si le résultat est vide{
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Correction ici : hachage du mot de passe
-        $requete = $bdd->prepare("INSERT INTO personnel (idP, NomP, PrenomP, DateN, MotDePasse, email) VALUES (:id, :nom, :prenom, :date, :password, :email)"); // Correction ici : parenthèses manquantes et correction de la syntaxe SQL
+        $requete = $bdd->prepare("INSERT INTO personnel (idP, NomP, PrenomP,
+         DateN, MotDePasse, email) VALUES (:id, :nom, :prenom, :date, :password, :email)");
+          // Correction ici : parenthèses manquantes et correction de la syntaxe SQL
         $requete->execute([
             "id" => $id,
             "nom" => $nom,
