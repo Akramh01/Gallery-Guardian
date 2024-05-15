@@ -160,26 +160,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    include 'bd.php';
-                    $sql = "SELECT * FROM Evenement";
-                    $result = $bdd->query($sql);
+                <?php
+// bd.php should include the connection setup, for example:
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=your_dbname;charset=utf8', 'your_username', 'your_password');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 
-                    if ($result->rowCount() > 0) {
-                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                            echo "<tr>";
-                            echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
-                    }
-                    $bdd = null;
-                    ?>
+// Requête SQL pour sélectionner des données depuis la table Evenement
+$sql = "SELECT * FROM Evenement";
+try {
+    $result = $bdd->query($sql);
+    
+    if ($result->rowCount() > 0) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+    }
+} catch (Exception $e) {
+    echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
+}
+
+// Fermeture de la connexion à la base de données
+$bdd = null;
+?>
+
                 </tbody>
             </table>
         </div>
