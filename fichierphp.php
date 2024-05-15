@@ -153,30 +153,41 @@
         <div class="containerEvent">
             <h2 style="text-align: center; color: red;">Alertes !!!</h2>
             <table class="center-table">
-                <tr>
-                    <th>Nom de l'oeuvre</th>
-                    <th>Date d'acquisition</th>
-                    <th>Emplacement</th>
-                </tr>
-                <!-- PHP pour générer les lignes du tableau -->
-                <?php
-                include 'bd.php';
-                $sql = "SELECT NomO, dateAcquisition, Emplacement FROM Oeuvreart";
-                $result = $bdd->query($sql);
+                <thead>
+                    <tr>
+                        <?php
+                        include 'bd.php';
+                        $sql = "SELECT * FROM Oeuvreart LIMIT 1";
+                        $result = $bdd->query($sql);
+                        if ($result->rowCount() > 0) {
+                            // Fetch the column names
+                            $columns = array_keys($result->fetch(PDO::FETCH_ASSOC));
+                            foreach ($columns as $column) {
+                                echo "<th>" . htmlspecialchars($column) . "</th>";
+                            }
+                        }
+                        ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $sql = "SELECT * FROM Oeuvreart";
+                    $result = $bdd->query($sql);
 
-                if ($result->rowCount() > 0) {
-                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                        echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row["NomO"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["dateAcquisition"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["Emplacement"]) . "</td>";
-                        echo "</tr>";
+                    if ($result->rowCount() > 0) {
+                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<tr>";
+                            foreach ($row as $cell) {
+                                echo "<td>" . htmlspecialchars($cell) . "</td>";
+                            }
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='" . count($columns) . "'>Aucun résultat trouvé</td></tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='3'>Aucun résultat trouvé</td></tr>";
-                }
-                $bdd = null;
-                ?>
+                    $bdd = null;
+                    ?>
+                </tbody>
             </table>
         </div>
     </label>
