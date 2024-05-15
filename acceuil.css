@@ -105,17 +105,13 @@ nav ul{
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image.jpg');
     background-size: cover; /* Assure que l'image de fond couvre toute la section */
 }
-.museum-plan, .artworks {
-    flex: 1; /* Les deux éléments prennent une part égale de l'espace */
-}
-/* Container pour les tableaux */
-.artworks {
-    display: flex; /* Utilise flexbox pour l'alignement des tableaux */
-    justify-content: space-around; /* Espacement équitable autour des éléments */
-    align-items: center; /* Centrer les éléments verticalement */
-    margin: 50px 0; /* Ajout de marge autour du conteneur pour une meilleure séparation */
-}
 
+.table-container {
+    display: flex; /* Alignement horizontal des tableaux */
+    justify-content: space-around; /* Espacement équilibré autour des éléments */
+    padding: 20px;
+    margin-top: 20px;
+}
 /* Styles spécifiques pour les tableaux pour garantir l'alignement et l'espacement */
 table {
     margin: 0 20px; /* Espacement horizontal entre les tables */
@@ -123,12 +119,23 @@ table {
     text-align: center; /* Centrage du texte dans les cellules */
 }
 
-/* Améliorer la visibilité des titres de colonnes */
-th {
-    background-color: #ccc; /* Couleur de fond pour les en-têtes de table */
-    color: black; /* Couleur de texte pour les en-têtes */
+.remote-table, .alert-table {
+    width: 45%; /* Chaque tableau prend 45% de la largeur du conteneur */
+    padding: 20px;
+    border: 1px solid #ccc; /* Bordure pour distinguer les tableaux */
+    background-color: #f9f9f9; /* Couleur de fond légère pour les tableaux */
 }
 
+table {
+    width: 100%; /* Maximiser la largeur de la table dans son conteneur */
+    border-collapse: collapse; /* Fusionner les bordures des cellules */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
 /* Correction de votre balise H4 mal formée dans le HTML */
 h4 a {
     color: inherit; /* Assure que le lien a la même couleur que le texte du H4 */
@@ -140,13 +147,6 @@ h4 a {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
     height: auto; /* Maintien de l'aspect ratio */
 }
-
-
-
-
-
-
-
 .centered-image {
     position: absolute; /* Définir le positionnement absolu */
     top: 60%; /* Placer l'image à 50% du haut */

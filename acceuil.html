@@ -34,22 +34,42 @@
             </ul>
             <img src="img.jpeg" alt="Oeuvre d'art" class="centered-image">
         </div>
+        <div class="table-container">
+            <!-- Container pour le tableau 'Remote' -->
+            <div class="remote-table">
+                <h2>Remote</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les données PHP seront générées ici -->
+                        <?php include 'remote.php'; ?>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Container pour le tableau 'Alerte' -->
+            <div class="alert-table">
+                <h2>Alerte !</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Notifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les données PHP seront générées ici -->
+                        <?php include 'alert.php'; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="artworks">
-        <!-- Le tableau PHP sera ici -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Télécommande</th>
-                    <th>Alerte</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php include 'fichier.php'; ?>
-            </tbody>
-        </table>
-    </div>
-</div>
+  
+
 
     <footer class="contact-footer">
         <div class="contact-info">
