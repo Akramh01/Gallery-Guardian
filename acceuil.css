@@ -121,7 +121,7 @@ nav ul{
     top: 60%; /* Placer l'image à 50% du haut */
     left: 10%; /* Placer l'image à 50% de la gauche */
     transform: translate(-20%, -50%); /* Déplacer l'image de moitié de sa propre taille vers le haut et la gauche */
-    width: 20%; /* Taille moyenne de l'image, ajustez selon vos besoins */
+    width: 30%; /* Taille moyenne de l'image, ajustez selon vos besoins */
     height: auto; /* Pour maintenir le ratio hauteur/largeur */
     display: block; /* Pour éviter les problèmes d'alignement */
     margin-top: 10px; /* Espacement entre la liste et l'image, ajustez selon vos besoins */
