@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin : 0;
     padding : 0;
@@ -23,7 +24,7 @@ h1 {
 
 h2 {
     font-size : 4.8rem;
-    color: #dfdddd;
+    color: #b2b1b1;
 }
 
 h3 {
@@ -31,8 +32,10 @@ h3 {
     color:beige;
 }
 
+
 .main-head li {
     font-size : 2rem;
+
 }
 
 a{
@@ -41,7 +44,7 @@ a{
 }
 
 .main-head {
-    background: #558eac ;
+    background: #0e3951 ;
     color :rgb(255, 255, 255);
 }
 
@@ -97,24 +100,52 @@ nav ul{
     width: 100%;
     min-height: 100vh ;
     position: relative;
-    background-image: url('./image.jpg');
     background-size: cover;
     background-position: bottom;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image.jpg');
+    background-size: cover; /* Assure que l'image de fond couvre toute la section */
+}
+.museum-plan, .artworks {
+    flex: 1; /* Les deux éléments prennent une part égale de l'espace */
+}
+/* Container pour les tableaux */
+.artworks {
+    display: flex; /* Utilise flexbox pour l'alignement des tableaux */
+    justify-content: space-around; /* Espacement équitable autour des éléments */
+    align-items: center; /* Centrer les éléments verticalement */
+    margin: 50px 0; /* Ajout de marge autour du conteneur pour une meilleure séparation */
 }
 
-.text2 ul {
-    display: flex;
-    justify-content: center; /* Pour aligner au centre horizontalement */
-    list-style: none;
-    padding: 4rem; /* Supprimer le padding par défaut */
+/* Styles spécifiques pour les tableaux pour garantir l'alignement et l'espacement */
+table {
+    margin: 0 20px; /* Espacement horizontal entre les tables */
+    flex: 0 1 45%; /* Flexibilité et base de la largeur pour chaque table */
+    text-align: center; /* Centrage du texte dans les cellules */
 }
 
-.text2 ul li {
-    margin: 0; /* Supprimer les marges par défaut */
-    padding: 10px; /* Ajouter un peu de marge entre les éléments */
-    padding: 20rem;
-    font-size: 3rem;
+/* Améliorer la visibilité des titres de colonnes */
+th {
+    background-color: #ccc; /* Couleur de fond pour les en-têtes de table */
+    color: black; /* Couleur de texte pour les en-têtes */
 }
+
+/* Correction de votre balise H4 mal formée dans le HTML */
+h4 a {
+    color: inherit; /* Assure que le lien a la même couleur que le texte du H4 */
+    text-decoration: none; /* Supprime le soulignement du lien */
+}
+
+/* Assurer que les images ne débordent pas de leur conteneur */
+.centered-image {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Maintien de l'aspect ratio */
+}
+
+
+
+
+
+
 
 .centered-image {
     position: absolute; /* Définir le positionnement absolu */
@@ -130,7 +161,7 @@ nav ul{
 
 /*footer*/
 .contact-footer {
-    color:beige;
+    color:#ffff;
     padding: 2rem;
     display: flex;
     justify-content: space-around;
