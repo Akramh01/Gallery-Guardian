@@ -49,8 +49,7 @@
          include 'bd.php';
         
           $requete = "SELECT idOeuvre, NumSalle FROM  Oeuvreart"; // Modifiez le nom de la table et des colonnes selon votre base de données
-          $resultat = $bdd->query($requette);
-
+          $resultat = mysqli_query($bdd, $requete);
 
           if ($resultat) {
             if (mysqli_num_rows($resultat) == 0) {
