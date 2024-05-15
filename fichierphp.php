@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notre site internet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -160,43 +161,42 @@
                     </tr>
                 </thead>
                 <tbody>
+
+
                 <?php
+        // Requête SQL pour sélectionner des données depuis la table Evenement
+        include 'bd.php';
 
-
-// Requête SQL pour sélectionner des données depuis la table Evenement
-include 'bd.php';
-
-$sql = "SELECT * FROM Evenement";
-try {
-    $result = $bdd->query($sql);
-    
-    if ($result->rowCount() > 0) {
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>";
-            echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
-            echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
-            echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
-            echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
-            echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
-            echo "</tr>";
+        $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
+        try {
+            $result = $bdd->query($sql);
+            
+            if ($result->rowCount() > 0) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+            }
+        } catch (Exception $e) {
+            echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
         }
-    } else {
-        echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
-    }
-} catch (Exception $e) {
-    echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
-}
 
-// Fermeture de la connexion à la base de données
-$bdd = null;
-?>
+        $bdd = null;
+        ?>
 
                 </tbody>
             </table>
         </div>
     </label>
     <footer>
-        <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
+       <!-- <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p> -->
     </footer>
 </body>
 </html>
