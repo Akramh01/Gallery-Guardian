@@ -244,7 +244,7 @@ input:checked ~ .slide{
 <?php
 // Requête SQL pour sélectionner des données depuis une table
 $sql = "SELECT NomO FROM Oeuvreart";
-$result = $conn->query($connexion, $requette);
+$result = $bdd->query($connexion, $requette);
 
 // Vérification s'il y a des résultats
 if ($result->num_rows > 0) {
@@ -257,6 +257,6 @@ if ($result->num_rows > 0) {
 }
 
 // Fermeture de la connexion à la base de données
-$conn->close();
+$bdd->close();
 ?>
 
