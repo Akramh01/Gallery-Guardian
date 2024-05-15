@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="oeuvre.css">
 </head>
-
 <body>
   <label>
     <input type="checkbox">
@@ -31,8 +29,6 @@
     </div>
   </label>
 
-  
-
   <div class="container">
     <div class="table-container">
       <h4>Des informations</h4>
@@ -45,29 +41,24 @@
         </thead>
         <tbody>
           <?php
-         
-         include 'bd.php';
-        
-          $requete = "SELECT idOeuvre, NumSalle FROM  Oeuvreart"; // Modifiez le nom de la table et des colonnes selon votre base de données
-          $resultat = mysqli_query($bdd, $requete);
+          include 'bd.php';  // Assurez-vous que ce fichier configure la connexion PDO
+          try {
+              $requete = "SELECT idOeuvre, NumSalle FROM Oeuvreart";
+              $resultat = $bdd->query($requete);
 
-          if ($resultat) {
-            if (mysqli_num_rows($resultat) == 0) {
-              echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
-            } else {
-              while ($ligneResultat = mysqli_fetch_assoc($resultat)) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($ligneResultat["idOeuvre"]) . "</td>";
-                echo "<td>" . htmlspecialchars($ligneResultat["NumSalle"]) . "</td>";
-                echo "</tr>";
+              if ($resultat->rowCount() == 0) {
+                echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
+              } else {
+                while ($ligneResultat = $resultat->fetch(PDO::FETCH_ASSOC)) {
+                  echo "<tr>";
+                  echo "<td>" . htmlspecialchars($ligneResultat["idOeuvre"]) . "</td>";
+                  echo "<td>" . htmlspecialchars($ligneResultat["NumSalle"]) . "</td>";
+                  echo "</tr>";
+                }
               }
-            }
-          } else {
-            echo "<tr><td colspan='2'>Erreur dans l'exécution de la requête : " . mysqli_error($connexion) . "</td></tr>";
+          } catch (PDOException $e) {
+              echo "<tr><td colspan='2'>Erreur dans l'exécution de la requête : " . $e->getMessage() . "</td></tr>";
           }
-
-          // Fermeture de la connexion
-          mysqli_close($bdd);
           ?>
         </tbody>
       </table>
@@ -83,5 +74,4 @@
     <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
   </footer>
 </body>
-
 </html>
