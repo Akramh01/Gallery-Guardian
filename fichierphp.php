@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,35 +152,31 @@
             <table class="center-table">
                 <thead>
                     <tr>
-                        <?php
-                        include 'bd.php';
-                        $sql = "SELECT * FROM Evenement LIMIT 1";
-                        $result = $bdd->query($sql);
-                        if ($result->rowCount() > 0) {
-                            // Fetch the column names
-                            $columns = array_keys($result->fetch(PDO::FETCH_ASSOC));
-                            foreach ($columns as $column) {
-                                echo "<th>" . htmlspecialchars($column) . "</th>";
-                            }
-                        }
-                        ?>
+                        <th>ID de l'événement</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Type d'événement</th>
+                        <th>Niveau d'alerte</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    include 'bd.php';
                     $sql = "SELECT * FROM Evenement";
                     $result = $bdd->query($sql);
 
                     if ($result->rowCount() > 0) {
                         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                             echo "<tr>";
-                            foreach ($row as $cell) {
-                                echo "<td>" . htmlspecialchars($cell) . "</td>";
-                            }
+                            echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='" . count($columns) . "'>Aucun résultat trouvé</td></tr>";
+                        echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
                     }
                     $bdd = null;
                     ?>
