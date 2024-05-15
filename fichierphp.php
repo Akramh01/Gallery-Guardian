@@ -164,9 +164,9 @@
 
 
                 <?php
-        // Requête SQL pour sélectionner des données depuis la table Evenement
+        // Inclusion du fichier de connexion à la base de données
         include 'bd.php';
-
+        // Requête SQL pour afficher les derniers événements
         $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
         try {
             $result = $bdd->query($sql);
@@ -183,14 +183,13 @@
                 }
             } else {
                 echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
-            }
+            }        
         } catch (Exception $e) {
             echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
         }
 
-        $bdd = null;
+        $bdd = null;//Fermeture de la connexion
         ?>
-
                 </tbody>
             </table>
         </div>
