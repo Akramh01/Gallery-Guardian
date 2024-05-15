@@ -7,7 +7,7 @@ $pass = ""; //password dans le raspberry sera different
 //Connexion à la base de donnée
 try{
             
-    $bdd = new PDO("mysql:host=$servername;dbname=gallery-guardian", $username, $pass);
+    $bdd = new PDO("mysql:host=$servername;dbname=15maigallery", $username, $pass);
     
     //connexion a la base de donnees, dbname pour le nom de la base de donnée que je n'ai pas encore mit
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //spécifier le type d'erreur
