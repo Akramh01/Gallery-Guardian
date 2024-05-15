@@ -2,9 +2,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" contet="width-device-width, initial-scale-1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet"href="acceuil.css">
-
+    
         <title>GalleryGardian </title>
     </head>
     <header class = "main-head">
@@ -29,13 +30,26 @@
     <div class = "section2">
         <div class="text2" >
             <ul>
-            <li><a href = 'oeuv.html'>Oeuvre</a></li>
-            <li><a href = 'Telecommande.html'>Télécomande</a></li>
-            <li><a href = 'test.html'>Alert ! </a></li>
+            <h4 a href = 'oeuv.html'>Oeuvre</a></h4>
             </ul>
             <img src="img.jpeg" alt="Oeuvre d'art" class="centered-image">
         </div>
     </div>
+    <div class="artworks">
+        <!-- Le tableau PHP sera ici -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Télécommande</th>
+                    <th>Alerte</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php include 'fichier.php'; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
     <footer class="contact-footer">
         <div class="contact-info">
@@ -59,4 +73,3 @@
     </footer>
 
 </body>
-
