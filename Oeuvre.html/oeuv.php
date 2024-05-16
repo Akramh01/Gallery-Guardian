@@ -44,19 +44,20 @@
             <?php
             include 'bd.php';  // Assurez-vous que ce fichier configure la connexion PDO
             try {
-                $requete = "SELECT O.idOeuvre as Num oeuvre,O.Emplacement as Emplacement, Nom as Nom du Musee
-                FROM Oeuvreart O, Musee M
-                WHERE O.idMusee = M.idMusee";
-                $resultat = $bdd->query($requete);
+              $requete = "SELECT O.idOeuvre as Num oeuvre,O.Emplacement as Emplacement, Nom as Nom du Musee
+              FROM Oeuvreart O, Musee M
+              WHERE O.idMusee = M.idMusee";
+              $resultat = $bdd->query($requete);
 
-                if ($resultat->rowCount() == 0) {
-                  echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
-                } else {
-                  while ($ligneResultat = $resultat->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($ligneResultat["idOeuvre"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($ligneResultat["NumSalle"]) . "</td>";
-                    echo "</tr>";
+              if ($resultat->rowCount() == 0) {
+                echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
+              } else {
+                while ($ligneResultat = $resultat->fetch(PDO::FETCH_ASSOC)) {
+                  echo "<tr>";
+                  echo "<td>" . htmlspecialchars($ligneResultat["Num oeuvre"]) . "</td>";
+                  echo "<td>" . htmlspecialchars($ligneResultat["Emplacement"]) . "</td>";
+                   echo "<td>" . htmlspecialchars($ligneResultat["Nom du Musee"]) . "</td>";
+                  echo "</tr>";
                   }
                 }
             } catch (PDOException $e) {
