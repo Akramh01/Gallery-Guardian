@@ -152,6 +152,7 @@ body {
 }
 
 .content {
+  color:#000000;
   display: flex; /* Utilise flexbox pour positionner les éléments côte à côte */
   align-items: flex-start; /* Alignement vertical des éléments au début */
   justify-content: space-between; /* Maximise l'espace entre la table et l'image */
