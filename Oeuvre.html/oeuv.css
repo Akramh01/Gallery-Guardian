@@ -326,23 +326,6 @@ body {
   position: relative;
 }
 
-
-.center-table th, .center-table td {
-  padding: 8px;
-  border: 1px solid #000000;
-  background-color: #ffffff;
-}
-
-.center-table th {
-  background-color: #bedefc;
-  text-align: left;
-}
-
-.content {
-  display: flex; /* Utilise flexbox pour positionner les éléments côte à côte */
-  align-items: flex-start; /* Alignement vertical des éléments au début */
-  justify-content: space-between; /* Maximise l'espace entre la table et l'image */
-}
 .footer {
   width: 100%;
   padding: 10px 0;
