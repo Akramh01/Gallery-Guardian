@@ -13,7 +13,7 @@
  
 <body>
   <label>
-    <input type="checkbox">
+   
     <div class="toggle">
       <span class="top_line common"></span>
       <span class="middle_line common"></span>
@@ -33,7 +33,7 @@
   
   <div class="container">
     <div class="table-container">
-      <h4>Des informations</h4>
+      <h4>Localisation des oeuvres </h4>
       <table border="1">
         <thead>
           <tr>
