@@ -1,100 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
-    margin : 0;
-    padding : 0;
-    box-sizing :border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(196, 254, 255);
+  }
+  
+  .slide{
+    height: 100%;
+    width: 180 px;
+    position: absolute;
+    background-color: #fff;
+    transition: 0.5s ease;
+    transform: translateX(-180px);
   }
 
-html {
-    font-size: 62.5%;
-}
-head title{
-    font-size: 62.5%;
-    color: #979797;
-}
+  h1{
+    color: darkcyan;
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+  }
 
-body{
-    font-size: 62.5%;
-    background-image: url('./image.jpg');
-}
-
-h1 {
-    font-size : 2.4rem;
-}
-
-h2 {
-    font-size : 4.8rem;
-    color: beige;
-}
-
-h3 {
-    font-size : 2rem;
-    color:beige;
-}
-
-
-.main-head li {
-    font-size : 2rem;
-
-}
-
-a{
-    color :aliceblue;
-    text-decoration: none;
-}
-
-.main-head {
-    background: #0e3951 ;
-    color :rgb(255, 255, 255);
-}
-
-nav {
-
-    min-height: 10vh;
-    display: flex;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-    padding: 2rem;
-}
-
-nav ul{
-
-    display: flex;
-    flex :1 1 40rem;
-    justify-content: space-around;
-    align-items: center;
+  ul li{
     list-style: none;
+  }
 
+  ul li a {
+    color:rgb(0, 0, 0);
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+
+  }
+
+  ul li:hover a{
+    color: #fff;
+    background-color: rgb(104, 195, 164);
+  }
+
+  ul li a i {
+    width: 40px;
+    text-align: center;
+
+  }
+
+  input{
+    display: none;
+    visibility: hidden;
+  }
+
+  .toggle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #0b1a1d ;
+    border-radius: 50px;
+    transition: 0.3s ease;
+
+  }
+
+  .toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  input:checked ~ .toggle .top_line{
+     left: 2px;
+     top: 14px;
+     width: 25px;
+     transform: rotate(45deg);
+  }
+
+  input:checked ~ .toggle .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+ }
+
+ input:checked ~ .toggle .middle_line{
+  opacity: 0;
+  transform: translatex(20px);
 }
 
-#Logo {
-    flex : 2 1 4rem;
+input:checked ~ .slide{
+  transform: translateX(0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
- 
-.text {
-    min-height: 90vh;
-    background-image: url('./image.jpg');
-    background-size: cover;
-    background-position: bottom;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.text h3 {
-    padding: 4rem;
-}
-
-.section1, .section2 {
-    
-    width: 100%;
-    min-height: 100vh ;
-    position: relative;
-    background-image:url('./image.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
+  
 .section2{
     
     width: 100%;
@@ -173,47 +204,3 @@ th, td {
     display: block; /* Pour éviter les problèmes d'alignement */
     margin-top: 10px; /* Espacement entre la liste et l'image, ajustez selon vos besoins */
 }
-
-
-/*footer*/
-.contact-footer {
-    color:#ffff;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.contact-info,
-.social-media {
-    flex: 1;
-    margin-right: 2rem;
-}
-
-.contact-info h3,
-.social-media h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.contact-info ul,
-.social-media ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info ul li,
-.social-media ul li {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.social-media ul li a {
-    text-decoration: none;
-    color: #ffff;
-    font-size: 1.5rem;
-}
-
-.social-media ul li a:hover {
-    color: #81d0fb;
-}
-
