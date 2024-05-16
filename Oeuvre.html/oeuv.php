@@ -1,30 +1,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notre site internet</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="oeuv.css">
+  
+  <link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
+ 
 <body>
   <label>
-  <input type="checkbox" id="menu-toggle" class="toggler">
-  <label for="menu-toggle" class="toggle">
-    <span class="top_line common"></span>
-    <span class="middle_line common"></span>
-    <span class="bottom_line common"></span>
+    <input type="checkbox">
+    <div class="toggle">
+      <span class="top_line common"></span>
+      <span class="middle_line common"></span>
+      <span class="bottom_line common"></span>
+    </div>
+
+    <div class="slide">
+      <h1>MENU</h1>
+      <ul>
+        <li><a href='#'><i class="fas fa-user"></i> Profile </a></li>
+        <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
+        <li><a href='#'><i class="fas fa-tv"></i> Oeuvre d'art </a></li>
+        <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
+      </ul>
+    </div>
   </label>
-  <div class="slide">
-    <h1>MENU</h1>
-    <ul>
-      <li><a href='#'><i class="fas fa-user"></i> Profile </a></li>
-      <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
-      <li><a href='#'><i class="fas fa-tv"></i> Oeuvre d'art </a></li>
-      <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
-    </ul>
-  </div>
+  
   <div class="container">
     <div class="table-container">
       <h4>Des informations</h4>
