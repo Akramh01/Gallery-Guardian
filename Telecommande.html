@@ -1,47 +1,61 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
+    <link rel="stylesheet" href= "telecommande.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Guardian</title>
-    <link rel="stylesheet" href="telecommande.css">
-    
-    
+    <title>Notre site internet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-    <div class="sidebar">
-        <div class="menu-header">
-            <i class="fas fa-bars"></i>
-            <span>MENU</span>
-        </div>
-        <ul class="menu-items">
-            <li><i class="fas fa-user"></i> Profile</li>
-            <li><i class="fas fa-remote"></i> Télécommande</li>
-            <li class="active"><i class="fas fa-paint-brush"></i> Oeuvre d'Art</li>
-            <li><i class="fas fa-calendar"></i> Events</li>
-        </ul>
-    </div>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+</head> 
 
-    <div class="main-content">
-        <div class="controls">
-            <div class="control-item">
-                <label>Temperature</label>
-                <input type="text" placeholder="Temperature">
-            </div>
-            <div class="control-item">
-                <label>Humidité</label>
-                <input type="text" placeholder="Humidité">
-            </div>
-            <div class="control-item">
-                <label>Etat de la porte</label>
-                <input type="text" placeholder="Etat de la porte">
-            </div>
-            <div class="control-item">
-                <label>Mouvement/ night mode</label>
-                <input type="text" placeholder="Mouvement/ night mode">
-            </div>
+<body>
+    <label>
+      <input type="checkbox">
+      <div class="toggle">
+        <span class="top_line common"></span>
+        <span class="middle_line common"></span>
+        <span class="bottom_line common"></span>
+      </div>
+
+      <div class = "slide">
+        <h1>MENU</h1>
+        <ul>
+          <li><a href = '#'><i class = "fas fa-user"></i> Profile </a></li>
+          <li><a href = '#'><i class = "far fa-address-book"></i> Télécommande </a></li>
+          <li><a href = '#'><i class = "fas fa-tv"></i> Oeuvre d'art </a>
+            
+        </li>
+          <li><a href = '#'><i class = "fas fa-comments"></i> Events </a></li>
+        </ul>
+      </div>
+    </label>
+
+    <div class = "container">
+      <div class = "header">
+        <h2>Oeuvre d'art</h2>
+        <img src = "imageprojet/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched (1).jpg" alt = "Avatar" class = "avatar">
+      </div>
+
+     
+     
+      <div class="main-content">
+      
+        <div class="control-panel">
+            <div class="label">Température: 22°C</div> 
+            <div class="label">Humidité: 45%</div>
+            <div class="label">État de la porte: Fermée</div>
+            <div class="label">Mouvement/Night Mode: Inactif</div>
         </div>
     </div>
+      
+      
+      
+      
+ 
+
+    <footer>
+       <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p> 
+    </footer> 
 </body>
 </html>
