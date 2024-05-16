@@ -130,26 +130,19 @@ input:checked ~ .slide {
     width: 30px;
     text-align: center;
 }
-.center-table {
-  margin: 0 auto;
-  margin-top: 10%;
-  width: 50%; 
-  border-collapse: collapse; 
-}
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #34495e;
-  color: #ecf0f1;
-  position: relative;
+
+header{
+    background-color: #142a40;
+    
 }
 
-.front-title {
-    position: relative;
+body {
+    background-color: #44576c;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: 50%;
 }
 .section2 {
     display: flex;
@@ -158,7 +151,6 @@ body {
     width: 100%;
     padding: 20px;
 }
-
 .content-section {
     flex-basis: 20%;
     text-align: center;
@@ -166,11 +158,37 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
 .content-section img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+.table-container {
+    display: flex;
+    flex-basis: 75%;
+    justify-content: space-between;
+    margin-left: 5%;
+}
+
+.remote-table, .alert-table {
+    background-color: #ffffff4a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%; /* Chaque tableau prend 45% de la largeur du conteneur */
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
 }
 
 h4 {
@@ -181,62 +199,8 @@ h4 {
     margin: 0;
 }
 
-img  {
-    width: 200px;  /* Largeur de l'image */
-    height: auto; 
-}  
-.table-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Assure que tous les éléments sont alignés verticalement au centre */
-    padding: 20px;
-}
-.title, .table {
-    flex-basis: 30%; /* Donne à chaque section un tiers de l'espace disponible */
-    text-align: center; /* Centre le texte horizontalement */
-}
-
-.remote {
-    order: 2; /* Place le Remote au centre */
-}
-
-.alert {
-    order: 3; /* Place l'Alerte à droite */
-}
-
-.title {
-    order: 1; /* Place le titre à gauche */
-}
-.remote-table {
-    width: 300px;
-    padding-left: 40px;
-    background-color: #ffffff4a;
-    margin-left: 45%;
-    border-radius: 10px;
-    margin-top: 0%;
-}   
-.alert-table {
-    width: 300px; /* Chaque tableau prend 45% de la largeur du conteneur */
-    padding: 10px;
-    background-color: #ffffff4a; /* Couleur de fond légère pour les tableaux */
-    margin-left: 15%;
-    border-radius: 10px;
-    margin-top: 0%;
-    
-}
-
-table {
-    width: 100%; /* Maximiser la largeur de la table dans son conteneur */
-    border-collapse: collapse; /* Fusionner les bordures des cellules */
-}
-
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
-h2 {
-    
-    margin-top: -5%;
-    
+ 
+h2, h4 {
+    margin-top: 0;
+    font-weight: 600;
 }
