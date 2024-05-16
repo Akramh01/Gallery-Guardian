@@ -149,12 +149,32 @@ body {
 
 .center-table th, .center-table td {
   padding: 8px;
-  border: 1px solid #000000;  
+  border: 1px solid #000000;
   background-color: #ffffff;
 }
 
 .center-table th {
-  background-color: #bedefc; 
-  text-align: left;  
+  background-color: #bedefc;
+  text-align: left;
+}
 
+.content {
+  display: flex; /* Utilise flexbox pour positionner les éléments côte à côte */
+  align-items: flex-start; /* Alignement vertical des éléments au début */
+  justify-content: space-between; /* Maximise l'espace entre la table et l'image */
+}
+
+.table-container {
+  flex: 1; /* Permet à la table de prendre l'espace disponible */
+  margin-right: 20px; /* Ajoute un espace à droite de la table */
+}
+
+.image-container {
+  flex: 0 1 300px; /* L'image ne grandit pas au-delà de 300px et peut se rétrécir */
+  text-align: center; /* Centre le texte et l'image à l'intérieur du conteneur */
+}
+
+.image-container img {
+  max-width: 100%; /* L'image est complètement responsive dans son conteneur */
+  height: auto; /* Maintient le ratio d'aspect de l'image */
 }
