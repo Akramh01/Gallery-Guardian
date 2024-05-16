@@ -8,7 +8,7 @@
   <title>Notre site internet</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
-  <link rel = "stylesheet" type = "text/css" href = "style.css">
+  <link rel = "stylesheet" type = "text/css" href = "oeuv.css">
 </head>
  
 <body>
