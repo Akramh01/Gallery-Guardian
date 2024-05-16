@@ -136,7 +136,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   color: #ecf0f1;
   position: relative;
 }
