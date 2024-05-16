@@ -44,9 +44,10 @@
             <?php
             include 'bd.php';  // Assurez-vous que ce fichier configure la connexion PDO
             try {
-              $requete = "SELECT O.idOeuvre as Num oeuvre,O.Emplacement as Emplacement, Nom as Nom du Musee
+              $requete = "SELECT O.idOeuvre as `Num oeuvre`, O.Emplacement as Emplacement, M.Nom as `Nom du Musee`
               FROM Oeuvreart O, Musee M
               WHERE O.idMusee = M.idMusee";
+              
               $resultat = $bdd->query($requete);
 
               if ($resultat->rowCount() == 0) {
