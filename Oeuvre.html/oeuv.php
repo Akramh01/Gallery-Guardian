@@ -10,8 +10,7 @@
   
   <link rel = "stylesheet" type = "text/css" href = "oeuv.css">
 </head>
- 
-<body>
+
 <body>
     <label class="navbar">
         <input type="checkbox" class="toggler">
@@ -31,7 +30,11 @@
             </ul>
         </div>
     </label>
-   
+    <div class="header">
+        <div><img src="menu-icon.png" alt="Menu Icon" /></div>
+        <h1>GalleryGuardian</h1>
+</div>
+
   <div class="container">
     <div class="table-container">
       <h4>Localisation des oeuvres </h4>
