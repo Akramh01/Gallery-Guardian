@@ -344,27 +344,3 @@ body {
   justify-content: space-between; /* Maximise l'espace entre la table et l'image */
 }
 
-.table-container {
-  flex: 1; /* Permet à la table de prendre l'espace disponible */
-  margin-right: 20px; /* Ajoute un espace à droite de la table */
-}
-
-.image-container {
-  flex: 0 1 300px; /* L'image ne grandit pas au-delà de 300px et peut se rétrécir */
-  text-align: center; /* Centre le texte et l'image à l'intérieur du conteneur */
-}
-
-.image-container img {
-  max-width: 100%; /* L'image est complètement responsive dans son conteneur */
-  height: auto; /* Maintient le ratio d'aspect de l'image */
-}
-.footer {
-  width: 100%;
-  padding: 10px 0;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
