@@ -137,7 +137,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #5d5d5d;
-  color: #ecf0f1;
+  color: #000000;
   position: relative;
 }
 .center-table th, .center-table td {
@@ -147,7 +147,7 @@ body {
 }
 
 .center-table th {
-  background-color: #bedefc;
+  background-color: #000000;
   text-align: left;
 }
 
