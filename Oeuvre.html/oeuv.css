@@ -136,6 +136,15 @@ input:checked ~ .slide {
   width: 50%; 
   border-collapse: collapse; 
 }
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #34495e;
+  color: #ecf0f1;
+  position: relative;
+}
 
 
 .center-table th, .center-table td {
