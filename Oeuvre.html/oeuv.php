@@ -74,7 +74,7 @@
     <img src="R.jpeg" alt="Plan du musée">
   </div>
 
-  <footer>
+  <footer class =footer>
     <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
   </footer>
 </body>
