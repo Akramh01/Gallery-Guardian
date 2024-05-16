@@ -31,7 +31,6 @@
         </div>
     </label>
     <div class="header">
-        <div><img src="menu-icon.png" alt="Menu Icon" /></div>
         <h1>GalleryGuardian</h1>
 </div>
 
