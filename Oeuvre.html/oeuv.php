@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Gallery Guardian</title>
-        <link rel="stylesheet" type="text/css" href="style2.css">
-        <!-- <link rel="stylesheet" type="text/css" href="style_login/first_login.css"> -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+        <link rel="stylesheet" type="text/css" href="oeuv.css">
+       
     </head>
     <body>
         <label class = "navbar">
@@ -32,7 +31,7 @@
         <div class="header">
             <img src="assets/Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
-            <input type="text" class="search-bar" placeholder="Recherche...">
+         
         </div>
   <div class="container">
     <div class="table-container">
