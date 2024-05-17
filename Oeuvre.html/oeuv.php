@@ -31,11 +31,14 @@
         </div>
     </label>
 
-
+    <div class="header">
+            <img src="assets/Logo.png" alt="Logo" width="50" height="50">
+            <h1>GalleryGuardian</h1>
+</div>
   <div class="container">
     <div class="table-container">
       <h4>Localisation des oeuvres </h4>
-      <table border="1">
+      <table border="1"> 
         <thead>
           <tr>
             <th>Num oeuvre</th>
@@ -45,35 +48,34 @@
         </thead>
         <tbody>
           <?php
-          include 'bd.php';  // Assurez-vous que ce fichier configure la connexion PDO
+          include 'bd.php';  // Vérifiez que ce fichier configure correctement la connexion PDO"
           try {
             $requete = "SELECT O.idOeuvre as `Num oeuvre`, O.Emplacement as Emplacement, M.Nom as `Nom du Musee`
             FROM Oeuvreart O, Musee M
-            WHERE O.idMusee = M.idMusee";
+            WHERE O.idMusee = M.idMusee";/* Cette requête permet d'obtenir le numéro de l'œuvre, le nom du musée où elle se trouve, ainsi que son emplacement. */
 
             $resultat = $bdd->query($requete);
 
-            if ($resultat->rowCount() == 0) {
-              echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";
+            if ($resultat->rowCount() == 0) {//la verification de resultat si il retourne rien 
+              echo "<tr><td colspan='2'>Aucune ligne ne correspond</td></tr>";// Si rowCount()=0  affichage d'un message 
             } else {
-              while ($ligneResultat = $resultat->fetch(PDO::FETCH_ASSOC)) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($ligneResultat["Num oeuvre"]) . "</td>";
-                echo "<td>" . htmlspecialchars($ligneResultat["Emplacement"]) . "</td>";
-                 echo "<td>" . htmlspecialchars($ligneResultat["Nom du Musee"]) . "</td>";
-                echo "</tr>";
+              while ($ligneResultat = $resultat->fetch(PDO::FETCH_ASSOC)) {// si la boucle retourne un ou plusieurs données 
+                echo "<tr>"; //on cree une ligne
+                echo "<td>" . htmlspecialchars($ligneResultat["Num oeuvre"]) . "</td>";//insertion de resultat  retourne (Num oeuvre) dans la case de colonne Num oeuvre 
+                echo "<td>" . htmlspecialchars($ligneResultat["Emplacement"]) . "</td>";//insertion de resultat  retourne (Emplacement) dans la case de colonne Emplacement
+                 echo "<td>" . htmlspecialchars($ligneResultat["Nom du Musee"]) . "</td>";////insertion de resultat  retourne (Nom du Musee) dans la case de colonne Nom Musee
                 }
               }
-          } catch (PDOException $e) {
-              echo "<tr><td colspan='2'>Erreur dans l'exécution de la requête : " . $e->getMessage() . "</td></tr>";
+          } catch (PDOException $e) {// si il y'a une execption 
+              echo "<tr><td colspan='3'>Erreur dans l'exécution de la requête : " . $e->getMessage() . "</td></tr>";// on utilise colspan pour afficher le  message d'erreur ou le  message indiquant qu'aucune ligne ne correspond et de  s'étendre sur toutes les colonnes du tableau
           }
           ?>
         </tbody>
       </table>
     </div>
   </div>
-
-  <div class="image-container">
+  
+  <div class="image-container"> 
     <h2>Plan de musée</h2>
     <img src="R.jpeg" alt="Plan du musée">
   </div>
