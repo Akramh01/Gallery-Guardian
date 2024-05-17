@@ -30,9 +30,7 @@
             </ul>
         </div>
     </label>
-    <div class="header">
-        <h1>GalleryGuardian</h1>
-</div>
+
 
   <div class="container">
     <div class="table-container">
