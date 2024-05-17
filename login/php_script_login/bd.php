@@ -1,8 +1,13 @@
 <?php
 
-$servername = "192.168.4.1"; //192.168.4.1 pour le raspberry
-$username = "phpmyadmin"; //username dans le raspberry sera different
-$pass = "tp"; //password dans le raspberry sera different
+// $servername = "192.168.4.1"; //192.168.4.1 pour le raspberry
+// $username = "phpmyadmin"; //username dans le raspberry sera different
+// $pass = "tp"; //password dans le raspberry sera different
+
+$servername = "localhost"; //192.168.4.1 pour le raspberry
+$username = "root"; //username dans le raspberry sera different
+$pass = ""; //password dans le raspberry sera different
+
 
 //Connexion à la base de donnée
 try{
