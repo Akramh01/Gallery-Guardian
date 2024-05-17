@@ -1,40 +1,39 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre site internet</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
-  <link rel = "stylesheet" type = "text/css" href = "oeuv.css">
-</head>
-
-<body>
-    <label class="navbar">
-        <input type="checkbox" class="toggler">
-        <div class="toggle">
-            <span class="top_line common"></span>
-            <span class="middle_line common"></span>
-            <span class="bottom_line common"></span>
-        </div>
-        <div class="slide">
-            <h1>MENU</h1>
-            <ul>
-                <li><a href='#'><i class="fas fa-user"></i> Profile </a></li>
-                <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
-                <li><a href='#'><i class="fas fa-tv"></i> Oeuvre D'art </a></li>
-                <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gallery Guardian</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <!-- <link rel="stylesheet" type="text/css" href="style_login/first_login.css"> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    </head>
+    <body>
+        <label class = "navbar">
+            <input type="checkbox" class = "toggler">
+            <div class="toggle">
+              <span class="top_line common"></span>
+              <span class="middle_line common"></span>
+              <span class="bottom_line common"></span>
+            </div>
+      
+            <div class = "slide">
+              <h1>MENU</h1>
+              <ul>
+                <li><a href = '#'><i class = "fas fa-user"></i> Profile </a></li>
+                <li><a href = '#'><i class = "far fa-address-book"></i> Télécommande </a></li>
+                <li><a href = '#'><i class = "fas fa-tv"></i> Oeuvre d'art </a></li>
+                <li><a href = '#'><i class = "fas fa-comments"></i> Events </a></li>
                 <li><a href = 'login.html'><i class = "fas fa-user"></i> Se connecter </a></li>
-            </ul>
-        </div>
-    </label>
+      
+              </ul>
+            </div>
+        </label>
 
-    <div class="header">
+        <div class="header">
             <img src="assets/Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
-</div>
+            <input type="text" class="search-bar" placeholder="Recherche...">
+        </div>
   <div class="container">
     <div class="table-container">
       <h4>Localisation des oeuvres </h4>
