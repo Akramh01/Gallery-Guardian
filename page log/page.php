@@ -68,41 +68,57 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Notifications</th>
+                        
+                        <th>ID de l'événement</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Type d'événement</th>
+                        <th>Niveau d'alerte</th>
+                    
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                    // Inclusion du fichier de connexion à la base de données
-                    include 'bd.php';
+                    
+                    
+    // Inclusion du fichier de connexion à la base de données
+    $servername = "localhost"; //192.168.4.1 pour le raspberry
+    $username = "root"; //username dans le raspberry sera different
+    $pass = ""; //password dans le raspberry sera different
 
-                    // Requête SQL pour afficher les derniers événements
-                    $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
+    //Connexion à la base de donnée
+    try {
+        $bdd = new PDO("mysql:host=$servername;dbname=15maigallery", $username, $pass);
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //spécifier le type d'erreur
+        echo "Connected successfully";
 
-                    try {
-                        // Exécution de la requête SQL
-                        $result = $bdd->query($sql);
+        // Requête SQL pour afficher les derniers événements
+        $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 1";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute();
 
-                        // Vérification si des résultats sont retournés
-                        if ($result->rowCount() > 0) {
-                            // Boucle à travers les résultats et affichage de chaque ligne
-                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['NvAlerte']) . "</td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            // Message si aucun résultat n'est trouvé
-                            echo "<tr><td colspan='3'>Aucun résultat trouvé</td></tr>";
-                        }
-                    } catch (Exception $e) {
-                        // Gestion des erreurs et affichage d'un message d'erreur
-                        echo "<tr><td colspan='3'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
-                    }
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+        }        
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    } catch(Exception $e) {
+        echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
+    } finally {
+        $bdd = null; //Fermeture de la connexion
+    }
 
-                    // Fermeture de la connexion
-                    $bdd = null;
-                    ?>
+        ?>
                     </tbody>
                 </table>
             </div>
