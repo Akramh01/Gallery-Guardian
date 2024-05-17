@@ -36,7 +36,7 @@
          
         </div >
         <div class="content">
-  <<div class="main-content">
+  <div class="main-content">
         <div class="table-container">
             <h4>Localisation des oeuvres</h4>
             <table class="center-table" border="1">
