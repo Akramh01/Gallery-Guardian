@@ -40,7 +40,7 @@
         <div class="table-container">
             <h4>Localisation des oeuvres</h4>
             <table class="center-table" border="1">
-      <
+      
         <thead>
           <tr>
             <th>Num oeuvre</th>
