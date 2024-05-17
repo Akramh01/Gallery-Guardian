@@ -131,26 +131,34 @@ input:checked ~ .slide {
     text-align: center;
 }
 
-header{
-    background-color: #142a40;
-    
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 
-body {
-    background-color: #44576c;
-    color: #ecf0f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.header h1 {
+    margin: 0;
+    flex-grow: 1;
 }
+
+.header img {
+    margin-right: 10px; /* Espace entre le logo et le titre */
+    margin-left: 30px;
+}
+
+
 .section2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
     padding: 20px;
+    margin-top: 250px; /* Ajouté pour compenser le header fixe */
 }
+
 .content-section {
     flex-basis: 20%;
     text-align: center;
@@ -158,6 +166,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 .content-section img {
     width: 100%;
     height: auto;
@@ -172,10 +181,10 @@ body {
 }
 
 .remote-table, .alert-table {
-    background-color: #ffffff4a;
+    background-color: #1d3043db;
     border-radius: 10px;
     padding: 20px;
-    width: 45%; /* Chaque tableau prend 45% de la largeur du conteneur */
+    width: 45%;
     text-align: center;
 }
 
@@ -189,23 +198,31 @@ th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
+    color: #fff;
 }
 
-h4 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
+h3 {
+    margin: 10;
+    color: black;
 }
 
- 
-h2, h4 {
+h2 {
+    margin: 10;
+    color: rgb(255, 255, 255);
+}
+
+h2, h3 {
     margin-top: 0;
     font-weight: 600;
 }
 
 footer {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333;
+    color: #ffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }

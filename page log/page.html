@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel = "stylesheet" type = "text/css" href = "page.css">
 </head> 
-<header class ="main-header"> 
-    <h1>Gallery Guardian</h1>
-</header>
 
 <body>
     <label>
@@ -31,9 +28,15 @@
         </ul>
       </div>
     </label>
+    <div class="header">
+        <img src="Logo.png" alt="Logo" width="50" height="50">
+        <h1>GalleryGuardian</h1>
+        
+    </div>
+
     <div class = "section2">
         <div class="content-section" >
-            <h4 class="front-title">Oeuvre</h4>
+            <h3 class="front-title">Oeuvre</h3>
             <img src="img.jpg" alt="Oeuvre d'art"  >
         </div>
         <div class="table-container">
@@ -65,10 +68,10 @@
                 <tbody>
                 <?php
                 
-    // Inclusion du fichier de connexion à la base de données
+    // Inclusion du fichier de connexion à la base de données//
     include 'bd.php';
 
-    // Requête SQL pour afficher les derniers événements
+    // Requête SQL pour afficher les derniers événements//
     $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
 
     try {
@@ -94,9 +97,8 @@ $bdd = null;
             </table>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
-    </footer> 
+      </footer>
 </body>
 </html>
