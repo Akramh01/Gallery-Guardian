@@ -130,15 +130,7 @@ input:checked ~ .slide {
     width: 30px;
     text-align: center;
 }
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  color: #000000;
-  position: relative;
-}
+
 .header {
     background-color: #333;
     color: white;
@@ -146,6 +138,17 @@ body {
     display: flex;
     align-items: center;
 }
+
+.header h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.header img {
+    margin-right: 10px; /* Espace entre le logo et le titre */
+    margin-left: 30px;
+}
+
 
 .center-table th, .center-table td {
   padding: 8px;
