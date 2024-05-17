@@ -1,22 +1,22 @@
 
 .titre{
     text-align: center;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bold;
     color: #d02127;
+    margin-top: 20px;
     
 
 }
 .center-table {
     margin: 0 auto;
-   
     width: 50%;  
     border-collapse: collapse;
 }
 .center-table th, .center-table td {
     padding: 8px;
     border: 1px solid #000000;
-    background-color: #ffffff;
+    background-color: #d0e7fc;
 }
 .center-table th {
     background-color:rgb(104, 195, 164);
@@ -33,7 +33,7 @@ body {
 .footer {
     width: 100%;
     padding: 20px 0;
-    background-color: #86a8c9;
+    background-color: #232d44;
     color: rgb(0, 0, 0);
     text-align: center;
     position: fixed;

@@ -11,17 +11,18 @@
   
 </head>
 <body>
-    <label>
-        <input type="checkbox">
-        <div class="toggle">
+    
+        <input type="checkbox" id="menu-toggle" class="toggler">
+        <label for= "menu-toggle" class="toggle">
             <span class="top_line common"></span>
             <span class="middle_line common"></span>
             <span class="bottom_line common"></span>
-        </div>
+        </label>
+
         <div class="slide">
             <h1>MENU</h1>
             <ul>
-                <li><a href='#'><i class="fas fa-user"></i> Profile </a></li>
+                <li><a href='#'><i class="fas fa-user"></i> Profil </a></li>
                 <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
                 <li><a href='#'><i class="fas fa-tv"></i> Oeuvre d'art </a></li>
                 <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
@@ -33,7 +34,7 @@
         <!-- Le header -->
         
         <div class="header">
-            <img src="assets/Logo.png" alt="Logo" width="10" height="10">
+            <img src="Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
          
             </div>
