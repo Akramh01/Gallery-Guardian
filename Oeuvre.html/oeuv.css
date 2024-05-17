@@ -152,45 +152,56 @@ input:checked ~ .slide {
 
 
 .center-table th, .center-table td {
-  padding: 8px;
-  border: 1px solid #000000;
-  background-color: #000000;
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
 }
 
 .center-table th {
-  background-color: #000000;
-  text-align: left;
+    background-color: #bedefc;
+    text-align: left;
 }
 
 .content {
-  color:#000000;
-  display: flex; /* Utilise flexbox pour positionner les éléments côte à côte */
-  align-items: flex-start; /* Alignement vertical des éléments au début */
-  justify-content: space-between; /* Maximise l'espace entre la table et l'image */
+    display: flex; /* Utilise flexbox pour positionner les éléments côte à côte */
+    align-items: flex-start; /* Alignement vertical des éléments au début */
+    justify-content: space-between; /* Maximise l'espace entre la table et l'image */
 }
 
 .table-container {
-  flex: 1; /* Permet à la table de prendre l'espace disponible */
-  margin-right: 20px; /* Ajoute un espace à droite de la table */
+    flex: 1; /* Permet à la table de prendre l'espace disponible */
+    margin-right: 20px; /* Ajoute un espace à droite de la table */
 }
 
 .image-container {
-  flex: 0 1 400px; /* L'image ne grandit pas au-delà de 300px et peut se rétrécir */
-  text-align: center; /* Centre le texte et l'image à l'intérieur du conteneur */
+    flex: 0 1 600px; /* L'image ne grandit pas au-delà de 600px et peut se rétrécir */
+    text-align: center; /* Centre le texte et l'image à l'intérieur du conteneur */
 }
 
 .image-container img {
-  max-width: 100%; /* L'image est complètement responsive dans son conteneur */
-  height: auto; /* Maintient le ratio d'aspect de l'image */
+    max-width: 100%; /* L'image est complètement responsive dans son conteneur */
+    height: auto; /* Maintient le ratio d'aspect de l'image */
+    max-height: 400px; /* Limite la hauteur maximale de l'image */
 }
 
 .footer {
-  width: 100%;
-  padding: 10px 0;
-  background-color: #2c3e50;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
+
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
