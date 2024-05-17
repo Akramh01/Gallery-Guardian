@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gallery Guardian</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <!-- <link rel="stylesheet" type="text/css" href="style_login/first_login.css"> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    </head>
+    <body>
+        <label class = "navbar">
+            <input type="checkbox" class = "toggler">
+            <div class="toggle">
+              <span class="top_line common"></span>
+              <span class="middle_line common"></span>
+              <span class="bottom_line common"></span>
+            </div>
+      
+            <div class = "slide">
+              <h1>MENU</h1>
+              <ul>
+                <li><a href = '#'><i class = "fas fa-user"></i> Profile </a></li>
+                <li><a href = '#'><i class = "far fa-address-book"></i> Télécommande </a></li>
+                <li><a href = '#'><i class = "fas fa-tv"></i> Oeuvre d'art </a></li>
+                <li><a href = '#'><i class = "fas fa-comments"></i> Events </a></li>
+                <li><a href = 'login.html'><i class = "fas fa-user"></i> Se connecter </a></li>
+      
+              </ul>
+            </div>
+        </label>
+
+        <div class="header">
+            <img src="assets/Logo.png" alt="Logo" width="50" height="50">
+            <h1>GalleryGuardian</h1>
+            <input type="text" class="search-bar" placeholder="Recherche...">
+        </div>
+        <div class="main-content">
+            <div class="art-display">
+                <img src="assets/Oeuvre d'art.jpg" alt="Œuvre d'art">
+            </div>
+            <div class="controls">
+                <!-- <?php
+                // URL de l'API JSON de Domoticz
+                $domoticz_url = "http://localhost:8080/json.htm";
+
+                // Paramètres de la requête HTTP GET pour récupérer les données du capteur
+                $device_idx = ; // ID du périphérique dans Domoticz
+                $request_url = $domoticz_url ."?type=devices&rid=" .$device_idx;
+
+                // Exécute la requête HTTP GET et récupère la réponse JSON
+                $response_json = file_get_contents($request_url);
+
+                // Convertit la réponse JSON en un tableau associatif PHP
+                $response_array = json_decode($response_json, true);
+                 // Vérifie que la requête a réussi et que les données sont disponibles
+                if ($response_array['status'] == 'OK' &&
+                isset($response_array['result'][0]['Type'])) {
+                // Récupère les données de mouvement, de luminosité, de température et la date de dernière mise à jour
+                $motion = $response_array['result'][0]['Usage'];
+                $brightness = $response_array['result'][0]['Data'];
+                $temperature = $response_array['result'][0]['Temp'];
+                $last_update = $response_array['result'][0]['LastUpdate'];
+                }
+                else {
+                    // La requête a échoué ou les données ne sont pas disponibles
+                    echo "Impossible de récupérer les données du capteur.";
+                    }
+                ?>
+                 -->
+
+
+                <input type="text" id="temperature" placeholder="Température"value="<?php echo htmlspecialchars($data['temperature']); ?>">
+                <input type="text" id="Brighness" placeholder="Brighness"value="<?php echo htmlspecialchars($data['brithness']); ?>">
+                <input type="text" id="doorStatus" placeholder="État de la porte"value="<?php echo htmlspecialchars($data['door_status']); ?>">
+                <input type="text" id="movement" placeholder="Mouvement/Night mode"value="<?php echo htmlspecialchars($data['movement']); ?>">
+            </div>
+        </div>
+
+
+
+    </body>
+    </html>
