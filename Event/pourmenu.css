@@ -131,3 +131,22 @@ input:checked ~ .slide {
     text-align: center;
 }
 
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.header img {
+    margin-right: 10px; /* Espace entre le logo et le titre */
+    margin-left: 30px;
+}
+

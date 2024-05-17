@@ -27,6 +27,22 @@
                 <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
             </ul>
         </div>
+
+
+
+        <!-- Le header -->
+        
+        <div class="header">
+            <img src="assets/Logo.png" alt="Logo" width="10" height="10">
+            <h1>GalleryGuardian</h1>
+         
+            </div>
+          
+
+            <!-- la fin du header -->
+
+    
+
         <div class="containerEvent">
             <div class="titre">
             <h2 >Alertes !!!</h2>
