@@ -29,7 +29,7 @@
         </label>
 
         <div class="header">
-            <img src="assets/Logo.png" alt="Logo" width="50" height="50">
+            <img src="Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
          
         </div>
