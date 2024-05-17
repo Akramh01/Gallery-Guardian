@@ -48,7 +48,7 @@
         // Inclusion du fichier de connexion à la base de données
         include 'bd.php';
         // Requête SQL pour afficher les derniers événements
-        $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
+        $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 5";
         try {
             $result = $bdd->query($sql);
             
