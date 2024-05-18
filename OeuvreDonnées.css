@@ -169,6 +169,7 @@ input:checked ~ .slide {
     max-width: 100%;
     height: auto;
 }
+
 .controls {
     background-color: white;
     padding: 10px;
@@ -176,6 +177,7 @@ input:checked ~ .slide {
     margin-top: 20px;
     width: 300px;
 }
+
 input[type="text"] {
     width: 100%;
     padding: 8px;

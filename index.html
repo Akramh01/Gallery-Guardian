@@ -37,3 +37,31 @@
     </footer> 
 </body>
 </html>
+<!-- <?php
+                // URL de l'API JSON de Domoticz
+                $domoticz_url = "http://localhost:8080/json.htm";
+
+                // Paramètres de la requête HTTP GET pour récupérer les données du capteur
+                $device_idx = ; // ID du périphérique dans Domoticz
+                $request_url = $domoticz_url ."?type=devices&rid=" .$device_idx;
+
+                // Exécute la requête HTTP GET et récupère la réponse JSON
+                $response_json = file_get_contents($request_url);
+
+                // Convertit la réponse JSON en un tableau associatif PHP
+                $response_array = json_decode($response_json, true);
+                 // Vérifie que la requête a réussi et que les données sont disponibles
+                if ($response_array['status'] == 'OK' &&
+                isset($response_array['result'][0]['Type'])) {
+                // Récupère les données de mouvement, de luminosité, de température et la date de dernière mise à jour
+                $motion = $response_array['result'][0]['Usage'];
+                $brightness = $response_array['result'][0]['Data'];
+                $temperature = $response_array['result'][0]['Temp'];
+                $last_update = $response_array['result'][0]['LastUpdate'];
+                }
+                else {
+                    // La requête a échoué ou les données ne sont pas disponibles
+                    echo "Impossible de récupérer les données du capteur.";
+                    }
+                ?>
+                 -->
