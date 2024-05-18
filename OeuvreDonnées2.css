@@ -149,12 +149,32 @@ input:checked ~ .slide {
     margin-left: 30px;
 }
 
+.header .search-bar{
+     margin-left: 300px ;
+}
+
 .search-bar {
-    width: 20px; /* Ajustez cette valeur pour raffiner la taille */
+    width: 100px; /* Adjusted width */
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-right: 50px;
 }
+
+.search-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #2c3e50;
+}
+
 
 .main-content {
     display: flex;
@@ -165,6 +185,7 @@ input:checked ~ .slide {
     background-color: #f4f4f4;
     height: calc(100vh - 60px); /* Hauteur de l'écran moins la hauteur de l'en-tête */
 }
+
 .art-display img {
     max-width: 100%;
     height: auto;
@@ -184,3 +205,25 @@ input[type="text"] {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }

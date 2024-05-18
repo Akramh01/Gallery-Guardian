@@ -1,55 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Gallery Guardian</title>
-        <link rel="stylesheet" type="text/css" href="style2.css">
-        <!-- <link rel="stylesheet" type="text/css" href="style_login/first_login.css"> -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    </head>
-    <body>
-        <label class = "navbar">
-            <input type="checkbox" class = "toggler">
-            <div class="toggle">
-              <span class="top_line common"></span>
-              <span class="middle_line common"></span>
-              <span class="bottom_line common"></span>
-            </div>
-      
-            <div class = "slide">
-              <h1>MENU</h1>
-              <ul>
-                <li><a href = '#'><i class = "fas fa-user"></i> Profile </a></li>
-                <li><a href = '#'><i class = "far fa-address-book"></i> Télécommande </a></li>
-                <li><a href = '#'><i class = "fas fa-tv"></i> Oeuvre d'art </a></li>
-                <li><a href = '#'><i class = "fas fa-comments"></i> Events </a></li>
-                <li><a href = 'login.html'><i class = "fas fa-user"></i> Se connecter </a></li>
-      
-              </ul>
-            </div>
-        </label>
-
-        <div class="header">
-            <img src="assets/Logo.png" alt="Logo" width="50" height="50">
-            <h1>GalleryGuardian</h1>
-            <input type="text" class="search-bar" placeholder="Recherche...">
+<head>
+    <meta charset="utf-8">
+    <title>Gallery Guardian</title>
+    <link rel="stylesheet" type="text/css" href="OeuvreDonnées2.css">
+</head>
+<body>
+    <label class="navbar">
+        <input type="checkbox" class="toggler">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
         </div>
-        <div class="main-content">
-            <div class="art-display">
-                <img src="assets/Oeuvre d'art.jpg" alt="Œuvre d'art">
+  
+        <div class="slide">
+            <h1>MENU</h1>
+            <ul>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="remote.html"><i class="far fa-address-book"></i> Télécommande</a></li>
+                <li><a href="artwork.html"><i class="fas fa-tv"></i> Oeuvre d'art</a></li>
+                <li><a href="events.html"><i class="fas fa-comments"></i> Events</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Se connecter</a></li>
+            </ul>
+        </div>
+    </label>
+
+    <div class="header">
+        <img src="assets/Logo.png" alt="Logo" width="50" height="50">
+        <h1>GalleryGuardian</h1>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Recherche par ID...">
+        <button class="search-button" onclick="searchArtwork()" >Search</button>
+    </div>
+    <div class="main-content">
+        <div class="art-display">
+            <img src="assets/Oeuvre d'art.jpg" alt="Œuvre d'art">
+        </div>
+        <div class="controls">
+            <div>
+                <label>Température: </label><span id="temperature"></span>
             </div>
-            <div class="controls">
-                
-
-
-                <input type="text" id="temperature" placeholder="Température"value="<?php echo htmlspecialchars($data['temperature']); ?>">
-                <input type="text" id="Brighness" placeholder="Brighness"value="<?php echo htmlspecialchars($data['brithness']); ?>">
-                <input type="text" id="doorStatus" placeholder="État de la porte"value="<?php echo htmlspecialchars($data['door_status']); ?>">
-                <input type="text" id="movement" placeholder="Mouvement/Night mode"value="<?php echo htmlspecialchars($data['movement']); ?>">
+            <div>
+                <label>Humidité: </label><span id="humidity"></span>
+            </div>
+            <div>
+                <label>Luminosité: </label><span id="brightness"></span>
+            </div>
+            <div>
+                <label>Art ID: </label><span id="artId"></span>
+            </div>
+            <div>
+                <label>Art Name: </label><span id="artName"></span>
             </div>
         </div>
+    </div>
 
+    <script>
+        function fetchData(url, callback) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Data fetched from " + url, data); // Debugging line
+                    callback(data);
+                })
+                .catch(error => console.error('Error:', error));
+        }
 
+        function searchArtwork() {
+            const searchBar = document.getElementById('search-bar');
+            const id = searchBar.value.trim();
+            if (id) {
+                fetchData(`Search.php?id=${id}`, data => {
+                    if (data.error) {
+                        console.error(data.error);
+                        alert(data.error);
+                    } else {
+                        document.getElementById('temperature').innerText = data.Temperature || 'N/A';
+                        document.getElementById('humidity').innerText = data.SignalM || 'N/A';
+                        document.getElementById('brightness').innerText = data.SignalV || 'N/A';
+                        document.getElementById('artId').innerText = data.idOeuvre || 'N/A';
+                        document.getElementById('artName').innerText = data.NomO || 'N/A';
+                    }
+                });
+            } else {
+                alert('Please enter a valid ID');
+            }
+        }
 
-    </body>
-    </html>
+        // Fetch initial environmental data
+        fetchData('fetch_data.php?type=capteur', data => {
+            if (data.error) {
+                console.error(data.error);
+            } else {
+                document.getElementById('temperature').innerText = data.Temperature || 'N/A';
+                document.getElementById('humidity').innerText = data.SignalM || 'N/A';
+                document.getElementById('brightness').innerText = data.SignalV || 'N/A';
+            }
+        });
+    </script>
+    <footer class =footer>
+        <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
+      </footer>
+</body>
+</html>
