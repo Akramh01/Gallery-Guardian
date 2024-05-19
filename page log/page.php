@@ -61,7 +61,7 @@
                     <tbody>
                         <!-- Les données PHP seront générées ici -->
                         <?php
-                         include 'remote.php'; ?> <!-- Inclusion du script PHP pour le tableau 'Remote' -->
+                         include 'DataOeuv.php'; ?> <!-- Inclusion du script PHP pour le tableau 'Remote' -->
                     </tbody>
                 </table>
             </div>
