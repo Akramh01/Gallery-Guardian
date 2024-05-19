@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing :border-box;
+  }
+
+html {
+    font-size: 62.5%;
+}
+head title{
+    font-size: 62.5%;
+    color: #979797;
+}
+
+body{
+    font-size: 62.5%;
+    background-image: url('./image.jpg');
+}
+
+h1 {
+    font-size : 2.4rem;
+}
+
+h2 {
+    font-size : 4.8rem;
+    color: beige;
+}
+
+h3 {
+    font-size : 2rem;
+    color:beige;
+}
+.main-head li {
+    font-size : 2rem;
+    margin-left: 50%;
+
+}
+
+a{
+    color :aliceblue;
+    text-decoration: none;
+}
+
+.main-head {
+    background: #0e3951 ;
+    color :rgb(255, 255, 255);
+}
+
+nav {
+
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+}
+
+nav ul{
+
+    display: flex;
+    flex :1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+}
+
+#Logo {
+    flex : 2 1 4rem;
+}
+ 
+.text {
+    min-height: 90vh;
+    background-image: url('./image.jpg');
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text h3 {
+    padding: 4rem;
+}
+
+.section1, .section2 {
+    
+    width: 100%;
+    min-height: 100vh ;
+    position: relative;
+    background-image:url('./image.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.section2{
+    
+    width: 100%;
+    min-height: 100vh ;
+    position: relative;
+    background-size: cover;
+    background-position: bottom;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image.jpg');
+    background-size: cover; /* Assure que l'image de fond couvre toute la section */
+}
+
+.table-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+/* Styles spécifiques pour les tableaux pour garantir l'alignement et l'espacement */
+table {
+    transform: translateX(20%);
+    text-align: right; /* Centrage du texte dans les cellules */
+    gap:50px ;
+}
+.remote-table {
+    width: 300px;
+    background-color: #ffffff4a;
+    margin-left: 45%;
+    border-radius: 10px;
+    margin-top: -10%;
+}   
+.alert-table {
+    width: 300px; /* Chaque tableau prend 45% de la largeur du conteneur */
+    padding: 20px;
+    background-color: #ffffff4a; /* Couleur de fond légère pour les tableaux */
+    margin-left: 15%;
+    border-radius: 10px;
+    margin-top: -5%;
+    
+}
+
+table {
+    width: 100%; /* Maximiser la largeur de la table dans son conteneur */
+    border-collapse: collapse; /* Fusionner les bordures des cellules */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+/* Correction de votre balise H4 mal formée dans le HTML */
+
+.front-title {
+    position: relative; /* Peut aussi être 'absolute' ou 'fixed' selon le besoin */
+    z-index: 1000; /* Une valeur élevée pour s'assurer qu'il est en haut de la pile */
+    color: beige; /* Couleur de texte */
+    text-decoration: none;
+    background: #ffffff4a; /* Fond légèrement transparent pour le contraste */
+    padding: 20px; /* Padding pour esthétique */
+    width: max-content; /* S'assure que la largeur correspond au contenu */
+    margin: auto; /* Centrage horizontal si nécessaire */
+}
+
+/* Assurer que les images ne débordent pas de leur conteneur */
+.centered-image {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Maintien de l'aspect ratio */
+    top: 70%;
+}
+.centered-image {
+    position: absolute; /* Définir le positionnement absolu */
+    left: 10%; /* Placer l'image à 50% de la gauche */
+    transform: translate(-20%, -50%); /* Déplacer l'image de moitié de sa propre taille vers le haut et la gauche */
+    width: 30%; /* Taille moyenne de l'image, ajustez selon vos besoins */
+    height: auto; /* Pour maintenir le ratio hauteur/largeur */
+    display: block; /* Pour éviter les problèmes d'alignement */
+    margin-top: 10px; /* Espacement entre la liste et l'image, ajustez selon vos besoins */
+}
+
+
+/*footer*/
+.contact-footer {
+    color:#ffff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-info,
+.social-media {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.contact-info h3,
+.social-media h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info ul,
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li,
+.social-media ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    color: #ffff;
+    font-size: 1.5rem;
+}
+
+.social-media ul li a:hover {
+    color: #81d0fb;
+}
+
