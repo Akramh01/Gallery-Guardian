@@ -180,6 +180,7 @@ input:checked ~ .slide {
     width: 100%;
     padding: 20px;
     margin-top: 150px; /* Ajouté pour compenser le header fixe */
+    margin-top: 200px; /* Ajouté pour compenser le header fixe */
 }
 /* Styles pour la section principale avec contenu réparti horizontalement et compensé en haut pour l'en-tête fixe */
 

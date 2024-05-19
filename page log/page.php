@@ -53,15 +53,29 @@
                     <thead>
                         <tr>
                             <th>Température</th>
-                            <th> Humidité</th>
-                            <th> Luminosité</th>
-                            <th> Art name</th>
+                            <th>Humidité</th>
+                            <th>Luminosité</th>
+                            <th>Nom de l'art</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Les données PHP seront générées ici -->
-                        <?php
-                         include 'DataOeuv.php'; ?> <!-- Inclusion du script PHP pour le tableau 'Remote' -->
+                    <?php
+    
+                         include 'bd.php';
+                         
+                         // Fetch environmental data
+                         $result = $conn->query("SELECT Temperature, SignalM, SignalV, NomO FROM capteur ORDER BY id DESC LIMIT 1");
+                         if ($result->num_rows > 0) {
+                             $data = $result->fetch_assoc();
+                             echo "<td>" . ($data['Temperature'] ?? 'N/A') . "</td>";
+                             echo "<td>" . ($data['SignalM'] ?? 'N/A') . "</td>";
+                             echo "<td>" . ($data['SignalV'] ?? 'N/A') . "</td>";
+                             echo "<td>" . ($data['NomO'] ?? 'N/A') . "</td>";
+                         } else {
+                             echo "<td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>";
+                         }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -86,6 +100,7 @@
                     
                     
     // Inclusion du fichier de connexion à la base de données
+
     include 'bd.php';
 
         // Requête SQL pour afficher les derniers événements
@@ -106,7 +121,7 @@
         } else {
             echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
         }        
-    } catch(PDOException $e) {
+     catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     } catch(Exception $e) {
         echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
@@ -115,12 +130,9 @@
     }
 
         ?>
-                           
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+        </tbody>
+    </table>
+    </div>  
 
     <!-- Footer -->
     <footer>
