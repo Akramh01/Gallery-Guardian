@@ -22,18 +22,62 @@ if ($data['status']=='OK') {
         $id = $data['result'][0]['idx'];
         $last_update = $data['result'][0]['LastUpdate'];
         $name = $data['result'][0]['Name'];
-        $type = $data['result'][0]['Type'];
         $etatP = $data['result'][0]['Data'];
-    
+        $elements = explode(" ", $last_update);
+        $date = $elements[0];
+        $heure = $elements[1];
+
+        
+        $verif = $bdd->prepare("SELECT idDP FROM DetecteurPorte WHERE idDP = :id");
+        $verif->execute(['id'=>$id]);
+
+
+        if($verif->rowCount()==0) {
+
+            $request = $bdd->prepare("INSERT INTO DetecteurPorte (idDP, SignalDP, Etat, date, heure)
+             VALUES (:id, :signal, :etat, :date, :heure)");
+            
+            $request->execute([
+                'id' => $id,
+                'signal' => $etatP,
+                'etat' => $etat,
+                'date' => $date,
+                'heure' => $heure
+            ]);
+        }else {
+            $request = $bdd->prepare("UPDATE DetecteurPorte set
+             SignalDP = :signal, Etat = :etat, date = :date, heure = :heure WHERE idDP = :id");
+            $request->execute([
+                'signal' => $etatP,
+                'etat' => $etat,
+                'date' => $date,
+                'heure' => $heure,
+                'id' => $id
+            ]);
+        }
+
     } else {
         $etat = "Off";
+
+        $verif = $bdd->prepare("SELECT idDP FROM DetecteurPorte WHERE idDP = :id");
+        $verif->execute(['id'=>$id]);
+
+        if($verif->rowCount()==0){
+            $reuqest = $bdd->prepare("INSERT INTO DetecteurPorte (idDP, Etat)
+             VALUES (:id, :etat)");
+            $request->execute([
+                'id' => $id,
+                'etat' => $etat
+            ]);
+        }else{
+            $request = $bdd->prepare("UPDATE DetecteurPorte set Etat = :etat WHERE idDP = :id");
+            $request->execute([
+                'etat' => $etat,
+                'id' => $id
+            ]);
+        }
     }
 
-    if($etatP=="Off") {
-        echo "porte fermée";
-    }else {
-        echo "Porte ouverte";
-    }
 
 } else {
      // La requête a échoué ou les données ne sont pas disponibles

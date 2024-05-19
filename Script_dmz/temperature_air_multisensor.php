@@ -55,6 +55,24 @@ if ($data['status']=='OK') {
 
     } else {
         $etat = "Off";
+
+        $verif = $bdd->prepare("SELECT idDP FROM Capteur WHERE idDP = :id");
+        $verif->execute(['id'=>$id]);
+
+        if($verif->countRow()==0){
+            $reuqest = $bdd->prepare("INSERT INTO Capteur (idDP, Etat)
+             VALUES (:id, :etat)");
+            $request->execute([
+                'id' => $id,
+                'etat' => $etat
+            ]);
+        }else{
+            $request = $bdd->prepare("UPDATE Capteur set Etat = :etat WHERE idDP = :id");
+            $request->execute([
+                'etat' => $etat,
+                'id' => $id
+            ]);
+        }
     }
 
     

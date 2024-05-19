@@ -16,8 +16,6 @@ $data = json_decode($output, true);
 // Vérifie que la requête a réussi et que les données sont disponibles
 if ($data['status']=='OK') {
 
-    $etat = "On";
-
     if (isset($data['result'])) {
         $etat = "On";
         $id = $data['result'][0]['idx'];
@@ -25,14 +23,11 @@ if ($data['status']=='OK') {
         $name = $data['result'][0]['Name'];
         $type = $data['result'][0]['Type'];
         $tmp = $data['result'][0]['Data'];
+
         $elements = explode(", ", $tmp);
+        $temperature = $elements[0];
+        $humidite = $elements[1];
 
-        
-
-        if (count($elements) == 2) {
-            $temperature = $elements[0];
-            $humidite = $elements[1];
-        }
         $element = explode(" ", $last_update);
         $date = $element[0];
         $heure = $element[1];
@@ -42,23 +37,23 @@ if ($data['status']=='OK') {
 
     if($verif->rowCount()==0){
 
-        $request = $bdd->prepare("INSERT INTO Capteur (idC, etatC, Temperature, humidité,type, nom, date, heure)
-         VALUES (:id, :etat, :temperature, :hum ,:type, :name, :date, :heure)");
+        $request = $bdd->prepare("INSERT INTO Capteur (idC, etatC, Temperature, humidite,type, nom, date, heure)
+         VALUES (:id, :etat, :temperature, :humidite ,:type, :name, :date, :heure)");
         $request->execute([
             'id' => $id,
             'etat' => $etat,
             'temperature' => $temperature,
-            'hum' => $humidite,
+            'humidite' => $humidite,
             'type' => $type,
             'name' => $name,
             'date' => $date,
             'heure' => $heure
         ]);
     }else if ($verif->rowCount()>0){
-        $request = $bdd->prepare("UPDATE Capteur SET Temperature = :temperature, humidité = :hum,date = :date, heure = :heure WHERE idC = :id");
+        $request = $bdd->prepare("UPDATE Capteur SET Temperature = :temperature, humidite = :humidite, date = :date, heure = :heure WHERE idC = :id");
         $request->execute([
             'temperature' => $temperature,
-            'hum' => $humidite,
+            'humidite' => $humidite,
             'date' => $date,
             'heure' => $heure,
             'id' => $id
@@ -67,6 +62,24 @@ if ($data['status']=='OK') {
         
     } else {
         $etat = "Off";
+
+        $verif = $bdd->prepare("SELECT idDP FROM Capteur WHERE idDP = :id");
+        $verif->execute(['id'=>$id]);
+
+        if($verif->countRow()==0){
+            $reuqest = $bdd->prepare("INSERT INTO Capteur (idDP, Etat)
+             VALUES (:id, :etat)");
+            $request->execute([
+                'id' => $id,
+                'etat' => $etat
+            ]);
+        }else{
+            $request = $bdd->prepare("UPDATE Capteur set Etat = :etat WHERE idDP = :id");
+            $request->execute([
+                'etat' => $etat,
+                'id' => $id
+            ]);
+        }
     }
 
 } else {
