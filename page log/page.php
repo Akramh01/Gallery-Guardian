@@ -48,61 +48,74 @@
         <div class="table-container">
             <!-- Container pour le tableau 'Remote' -->
             <div class="remote-table">
-                <h2>Remote</h2>
+                <h2>Data Oeuvre</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Actions</th>
+                            <th>Température</th>
+                            <th> Humidité</th>
+                            <th> Luminosité</th>
+                            <th> Art name</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Les données PHP seront générées ici -->
-                        <?php include 'remote.php'; ?> <!-- Inclusion du script PHP pour le tableau 'Remote' -->
+                        <?php
+                         include 'remote.php'; ?> <!-- Inclusion du script PHP pour le tableau 'Remote' -->
                     </tbody>
                 </table>
             </div>
             
             <!-- Container pour le tableau 'Alerte' -->
             <div class="alert-table">
-                <h2>Alerte !</h2>
+                <h2>Alert !</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Notifications</th>
+                        
+                        <th>ID de l'événement</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Type d'événement</th>
+                        <th>Niveau d'alerte</th>
+                    
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                    // Inclusion du fichier de connexion à la base de données
-                    include 'bd.php';
+                    
+                    
+    // Inclusion du fichier de connexion à la base de données
+    include 'bd.php';
 
-                    // Requête SQL pour afficher les derniers événements
-                    $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 9";
+        // Requête SQL pour afficher les derniers événements
+        $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 1";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute();
 
-                    try {
-                        // Exécution de la requête SQL
-                        $result = $bdd->query($sql);
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["DateE"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["Heure"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["TypeE"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["NvAlerte"]) . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>Aucun résultat trouvé</td></tr>";
+        }        
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    } catch(Exception $e) {
+        echo "<tr><td colspan='5'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
+    } finally {
+        $bdd = null; //Fermeture de la connexion
+    }
 
-                        // Vérification si des résultats sont retournés
-                        if ($result->rowCount() > 0) {
-                            // Boucle à travers les résultats et affichage de chaque ligne
-                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['NvAlerte']) . "</td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            // Message si aucun résultat n'est trouvé
-                            echo "<tr><td colspan='3'>Aucun résultat trouvé</td></tr>";
-                        }
-                    } catch (Exception $e) {
-                        // Gestion des erreurs et affichage d'un message d'erreur
-                        echo "<tr><td colspan='3'>Erreur : " . htmlspecialchars($e->getMessage()) . "</td></tr>";
-                    }
-
-                    // Fermeture de la connexion
-                    $bdd = null;
-                    ?>
+        ?>
+                           
                     </tbody>
                 </table>
             </div>

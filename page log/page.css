@@ -179,7 +179,7 @@ input:checked ~ .slide {
     align-items: flex-start;
     width: 100%;
     padding: 20px;
-    margin-top: 250px; /* Ajouté pour compenser le header fixe */
+    margin-top: 150px; /* Ajouté pour compenser le header fixe */
 }
 /* Styles pour la section principale avec contenu réparti horizontalement et compensé en haut pour l'en-tête fixe */
 
@@ -218,8 +218,9 @@ input:checked ~ .slide {
 
 table {
     width: 100%;
+    font-size: 12px;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 10px  0;
 }
 /* Styles pour les tables, prenant toute la largeur disponible, avec fusion des bordures */
 
@@ -231,6 +232,22 @@ th, td {
 }
 /* Styles pour les cellules des tables avec bordure noire et texte blanc */
 
+.alert-table{
+    font-size: 10px;
+    padding:10px;
+}
+
+.alert-table table {
+    font-size: 10px;
+    padding:10px;
+}
+.alert-table th, .alert-table td {
+    padding:10px;
+    
+}
+.alert-table td {
+    font-size : 11px ;
+}
 h3 {
     margin: 10;
     color: black;
