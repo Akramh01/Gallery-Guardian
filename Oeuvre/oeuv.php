@@ -10,8 +10,8 @@
 
 <body>
     <!-- Menu toggle avec checkbox pour afficher/masquer le menu -->
-    <label>
-      <input type="checkbox">
+    <label class="navbar">
+      <input type="checkbox" class="toggler">
       <div class="toggle">
         <span class="top_line common"></span>
         <span class="middle_line common"></span>
@@ -31,7 +31,7 @@
     </label>
 
         <div class="header">
-            <img src="Logo.png" alt="Logo" width="50" height="50">
+            <img src="../assets/Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
          
         </div >
@@ -50,7 +50,7 @@
         </thead>
         <tbody>
           <?php
-          include 'bd.php';  // Vérifiez que ce fichier configure correctement la connexion PDO"
+          include '../DataBase/bd.php';  // Vérifiez que ce fichier configure correctement la connexion PDO"
           try {
             $requete = "SELECT O.idOeuvre as `Num oeuvre`, O.Emplacement as Emplacement, M.Nom as `Nom du Musee`
             FROM Oeuvreart O, Musee M
@@ -79,7 +79,7 @@
   
   <div class="image-container"> 
     <h2>Plan de musée</h2>
-    <img src="R.jpeg" alt="Plan du musée">
+    <img src="../assets/Plan.jpeg" alt="Plan du musée">
   </div>
         </div>
   <footer class =footer>

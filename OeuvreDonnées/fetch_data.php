@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'bd.php';
+include '../DataBase/bd.php';
 
 $type = isset($_GET['type']) ? $_GET['type'] : '';
 
