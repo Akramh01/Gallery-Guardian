@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Encodage des caractères en UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration de la mise en page pour les appareils mobiles -->
     <title>Notre site internet</title> <!-- Titre de la page -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Lien vers les icônes Font Awesome -->
@@ -37,10 +37,9 @@
         </div >
         <div class="content">
   <div class="main-content">
-        <div class="table-container">
-            <h4>Localisation des oeuvres</h4>
-            <table class="center-table" border="1">
-      
+    <h4 class="title">Localisation des oeuvres</h4>
+      <div class="table-container">
+        <table class="center-table" border="1">
         <thead>
           <tr>
             <th>Num oeuvre</th>
@@ -76,12 +75,12 @@
       </table>
     </div>
   </div>
-  
+  <div>
+  <h2 class="planTitle" >Plan de musée</h2>
   <div class="image-container"> 
-    <h2>Plan de musée</h2>
     <img src="../assets/Plan.jpeg" alt="Plan du musée">
   </div>
-        </div>
+</div>
   <footer class =footer>
     <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
   </footer>
