@@ -15,7 +15,7 @@ head title{
 
 body{
     font-size: 62.5%;
-    background-image: url('./image.jpg');
+    background-image: url('../assets/Acceuil.jpg');
 }
 
 h1 {
@@ -73,7 +73,7 @@ nav ul{
  
 .text {
     min-height: 90vh;
-    background-image: url('./image.jpg');
+    background-image: url('../assets/Acceuil.jpg');
     background-size: cover;
     background-position: bottom;
     display: flex;
@@ -90,7 +90,7 @@ nav ul{
     width: 100%;
     min-height: 100vh ;
     position: relative;
-    background-image:url('./image.jpg');
+    background-image:url('../assets/Acceuil.jpg');
     background-size: cover;
     background-position: bottom;
 }
