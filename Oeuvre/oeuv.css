@@ -123,7 +123,7 @@ input:checked ~ .slide {
 
 .slide ul li:hover a {
     color: #fff;
-    background-color: rgb(104, 195, 164);
+    background-color: #333;
 }
 
 .slide ul li a i {
@@ -197,18 +197,7 @@ input:checked ~ .slide {
 .footer {
     width: 100%;
     padding: 10px 0;
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-.footer {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #2c3e50;
+    background-color: #333;
     color: rgb(0, 0, 0);
     text-align: center;
     position: fixed;

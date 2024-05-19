@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre site internet</title>
+    <title>Gallery Guardian</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="eventstyles.css">
-    <link rel="stylesheet" type="text/css" href="eventmenu.css">
+    <link rel="stylesheet" type="text/css" href="../Event/eventstyles.css">
+    <link rel="stylesheet" type="text/css" href="../OeuvreDonnées/OeuvreDonnées2.css">
   
 </head>
 <body>
     
-        <input type="checkbox" id="menu-toggle" class="toggler">
-        <label for= "menu-toggle" class="toggle">
+    <label class="navbar">
+        <input type="checkbox" class="toggler">
+        <div class="toggle">
             <span class="top_line common"></span>
             <span class="middle_line common"></span>
             <span class="bottom_line common"></span>
-        </label>
+        </div>
 
         <div class="slide">
             <h1>MENU</h1>
@@ -28,16 +29,16 @@
                 <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
             </ul>
         </div>
-
+    </label>
 
 
         <!-- Le header -->
         
         <div class="header">
-            <img src="Logo.png" alt="Logo" width="50" height="50">
+            <img src="../assets/Logo.png" alt="Logo" width="50" height="50">
             <h1>GalleryGuardian</h1>
          
-            </div>
+        </div>
           
 
             <!-- la fin du header -->
@@ -47,7 +48,7 @@
         <div class="containerEvent">
             <div class="titre">
             <h2 >Alertes !!!</h2>
-            </div>
+        </div>
             <table class="center-table">
                 <thead>
                     <tr>
@@ -58,12 +59,12 @@
                         <th>Niveau d'alerte</th>
                     </tr>
                 </thead>
-                <tbody>
+        <tbody>
 
 
                 <?php
         // Inclusion du fichier de connexion à la base de données
-        include 'bd.php';
+        include '../DataBase/bd.php';
         // Requête SQL pour afficher les derniers événements
         $sql = "SELECT * FROM Evenement ORDER BY idEvent DESC LIMIT 5";
         try {
@@ -93,7 +94,7 @@
         </div>
     </label>
     <footer class="footer">
-       <!-- <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p> -->
+       <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
     </footer>
 </body>
 </html> 

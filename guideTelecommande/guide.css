@@ -142,7 +142,7 @@ input:checked ~ .slide {
 
 .slide ul li:hover a {
     color: #fff;
-    background-color: rgb(104, 195, 164);
+    background-color: #333;
 }
 /* Changement de couleur de fond et de texte au survol des liens du menu */
 
