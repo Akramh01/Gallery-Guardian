@@ -23,10 +23,11 @@
         <div class="slide">
             <h1>MENU</h1>
             <ul>
-                <li><a href='#'><i class="fas fa-user"></i> Profil </a></li>
-                <li><a href='#'><i class="far fa-address-book"></i> Télécommande </a></li>
-                <li><a href='#'><i class="fas fa-tv"></i> Oeuvre d'art </a></li>
-                <li><a href='#'><i class="fas fa-comments"></i> Events </a></li>
+                <li><a href="../pageLog/page.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="../guideTelecommande/guide.html"><i class="far fa-address-book"></i> Télécommande</a></li>
+                <li><a href="../Oeuvre/oeuv.php"><i class="fas fa-tv"></i> Oeuvre d'art</a></li>
+                <li><a href="../Event/eventpage.php"><i class="fas fa-comments"></i> Events</a></li>
+                <li><a href="../OeuvreDonnées/OeuvreDonnées.html"><i class="far fa-address-book"></i> Données Oeuvres</a></li>
             </ul>
         </div>
     </label>
