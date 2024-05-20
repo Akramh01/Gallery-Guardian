@@ -1,6 +1,6 @@
 <?php
 
-include 'bd.php';
+include '../../DataBase/bd.php';
 
 //var_export($_SERVER);
 
@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($requet->rowCount() == 1) {
             // je renvoie vers la page d'accueil
-            header('Location: ../first_login.html');
+            header('Location: ../../pageLog/page.html');
             exit();
         } else {
             header('Location: ../login.html?error=Identifiant ou mot de passe incorrect !');

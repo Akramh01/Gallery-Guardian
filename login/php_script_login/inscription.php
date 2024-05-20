@@ -1,6 +1,6 @@
 <?php
 
-include 'bd.php';
+include '../../DataBase/bd.php';
 
 
 if (isset($_POST['create'])) { // Vérifie si le formulaire a été soumis

@@ -1,5 +1,5 @@
 <?php
-include 'bd.php';
+include '../../DataBase/bd.php';
 
 if(isset($_POST['email'])) {
     $token = uniqid();
