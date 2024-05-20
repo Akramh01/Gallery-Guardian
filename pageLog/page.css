@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Importation de la police Poppins depuis Google Fonts */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Réinitialisation des marges et des paddings pour tous les éléments, 
+   utilisation de la police Poppins, et définition de box-sizing pour inclure padding et border dans les dimensions des éléments */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* Barre de navigation positionnée absolument en haut et prenant toute la largeur */
+
+.toggler {
+    display: none;
+}
+/* Caché par défaut */
+
+.toggle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* Bouton de toggle pour le menu, positionné absolument avec styles pour l'apparence */
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #0b1a1d;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+/* Styles communs pour les lignes du toggle */
+
+.toggle .top_line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Positionnement de la ligne supérieure du toggle */
+
+.toggle .middle_line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Positionnement de la ligne du milieu du toggle */
+
+.toggle .bottom_line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Positionnement de la ligne inférieure du toggle */
+
+input:checked ~ .toggle .top_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+/* Transforme la ligne supérieure en une partie de la croix lorsque le toggle est activé */
+
+input:checked ~ .toggle .bottom_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+/* Transforme la ligne inférieure en une partie de la croix lorsque le toggle est activé */
+
+input:checked ~ .toggle .middle_line {
+    opacity: 0;
+    transform: translateX(20px);
+}
+/* Cache la ligne du milieu lorsque le toggle est activé */
+
+.slide {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    background-color: #2c3e50;
+    transition: 0.5s ease;
+    transform: translateX(-250px);
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+/* Menu coulissant caché par défaut à gauche, avec une animation de transition */
+
+input:checked ~ .slide {
+    transform: translateX(0);
+}
+/* Affiche le menu coulissant lorsque le toggle est activé */
+
+.slide h1 {
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px 0;
+    pointer-events: none;
+}
+/* Styles pour le titre du menu coulissant */
+
+.slide ul {
+    padding: 0;
+    list-style: none;
+}
+/* Supprime les styles par défaut des listes dans le menu coulissant */
+
+.slide ul li {
+    list-style: none;
+}
+/* Supprime les styles de liste pour chaque élément de la liste dans le menu coulissant */
+
+.slide ul li a {
+    color: white;
+    font-weight: 500;
+    padding: 15px 20px;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+/* Styles pour les liens dans le menu coulissant */
+
+.slide ul li:hover a {
+    color: #fff;
+    background-color: rgb(104, 195, 164);
+}
+/* Changement de couleur de fond et de texte au survol des liens du menu */
+
+.slide ul li a i {
+    width: 30px;
+    text-align: center;
+}
+/* Styles pour les icônes dans les liens du menu */
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+/* Styles pour l'en-tête de la page, avec fond sombre et texte blanc, centré verticalement */
+
+.header h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+/* Supprime la marge par défaut du titre dans l'en-tête et permet au titre de prendre tout l'espace disponible */
+
+.header img {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+/* Espacement autour de l'image (logo) dans l'en-tête */
+
+.section2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    margin-top: 150px; /* Ajouté pour compenser le header fixe */
+    margin-top: 200px; /* Ajouté pour compenser le header fixe */
+}
+/* Styles pour la section principale avec contenu réparti horizontalement et compensé en haut pour l'en-tête fixe */
+
+.content-section {
+    flex-basis: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Styles pour la section de contenu incluant l'image et le titre */
+
+.content-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Styles pour les images dans la section de contenu */
+
+
+h3 {
+    margin: 10;
+    color: black;
+}
+/* Styles pour les titres de niveau 3 avec marge et texte noir */
+
+h2 {
+    margin: 10;
+    color: rgb(255, 255, 255);
+}
+/* Styles pour les titres de niveau 2 avec marge et texte blanc */
+
+h2, h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+/* Styles communs pour les titres h2 et h3 avec pas de marge en haut et texte en gras */
+
+footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333;
+    color: #ffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+/* Styles pour le pied de page fixé en bas de la page avec fond sombre et texte blanc centré */

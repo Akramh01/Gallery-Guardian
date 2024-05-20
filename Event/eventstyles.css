@@ -1,0 +1,42 @@
+
+.titre{
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: #091753;
+    margin-top: 20px;
+    
+
+}
+.center-table {
+    margin: 0 auto;
+    width: 50%;  
+    border-collapse: collapse;
+}
+.center-table th, .center-table td {
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #d0e7fc;
+}
+.center-table th {
+    background-color:rgb(64, 65, 69);
+    text-align: left;
+}
+
+body {
+    
+    background-color: #ffffff;
+    color: #000000;
+   
+}
+
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #232d44;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
