@@ -1,6 +1,6 @@
 <?php
 
-include 'bd.php';
+include '../DataBase/bd.php';
 
 // URL de l'API JSON pour récupérer les informations sur un périphérique
 $request_url = curl_init("http://192.168.4.1:8080/json.htm?type=devices&filter=all&used=true&order=Name&param=getdevices&rid=30");

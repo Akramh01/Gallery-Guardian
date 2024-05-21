@@ -1,6 +1,5 @@
 <?php
-
-include 'bd.php';
+include '../DataBase/bd.php';
 
 $capteur = $bdd->prepare("SELECT * FROM Capteur");
 $capteur->execute();
