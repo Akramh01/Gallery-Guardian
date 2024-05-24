@@ -6,7 +6,7 @@ myForm.addEventListener('submit', function(e) {
     let prenom = document.getElementById('prenom');
     let email = document.getElementById('email');
     let password = document.getElementById('password');
-    let dart = document.getElementById('date');
+    let date = document.getElementById('date');
 
     if(id.value.trim() == '') {
         id.placeholder = 'Veuillez entrer votre identifiant';
